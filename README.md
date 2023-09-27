@@ -25,6 +25,12 @@ Please reach out to get more guidance how to implement this widget on a wix site
 
 Temporary edit access can be provided to a Frontrow engineer to make the changes themselves if that is preferred by the client.
 
+## Wix
+
+Please reach out to get more guidance how to implement this widget on a wix site. Due to the nature of the builder tool in wix, putting direct html code snippets (like the one provided in this project) aren't well supported.
+
+Temporary edit access can be provided to a Frontrow engineer to make the changes themselves if that is preferred by the client.
+
 ## React
 
 The react directory has a sample component for how many providers have added a product to their Frontrow Health page. This component should be copied into the health brand's project.
