@@ -10,7 +10,7 @@ export default function Widget() {
         <span className="num-value">240</span>{' '}
         <span className="bold">medical providers </span>
         <span className="text" />
-        <a href="https://thefrontrowhealth.com/overview/" className="link">
+        <a href="https://thefrontrowhealth.com/overview/" className="link" target="_blank">
           Learn more from our partner
         </a>
       </p>

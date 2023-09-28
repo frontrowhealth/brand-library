@@ -8,7 +8,7 @@ export default function WidgetWithTailwind() {
         <span className="w-10 h-[22px] px-1.5 py-1 bg-white rounded shadow border border-[#DAE8DF] justify-center items-center gap-2.5 inline-flex text-center font-bold">240</span>{' '}
         <span className="font-bold">medical providers</span>
         <span className="leading-normal"> recently shared this with patients, and were not paid to do so! </span>
-        <a href="https://thefrontrowhealth.com/overview/" className="underline leading-normal block md:flex">Learn more from our partner</a>
+        <a href="https://thefrontrowhealth.com/overview/" className="underline leading-normal block md:flex" target="_blank">Learn more from our partner</a>
       </p>
     </div>);
 };

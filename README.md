@@ -11,6 +11,7 @@ The following frameworks have sample code provided:
 - ReactJS with CSS or tailwind
 - Shopify
 - Framer
+- Wordpress (with elementor plugin)
 
 ## Mobile & desktop versions
 
@@ -99,6 +100,16 @@ In order to add the custom widget to a shopify store, follow these steps:
 6. Save a preview by publishing a preview or pressing the "play" button in the top right hand corner
 7. Repeat these steps and reuse the override file & function if you have the widget on any other pages
 
+## Wordpress (with elementor)
+
+1. In the elementor editor, click to add a new section where you want the snippet to be.
+2. Search for html in the elements panel
+3. Select the html type
+4. Copy the code from `wordpress/widget.html` in the code section
+5. In the next tab, Advanced, scroll to the bottom and select "Custom CSS"
+6. Copy the code from `wordpress/widget.css` in the code section
+7. You should see the widget as intended. Feel free to change colors to match your own branding at this point.
+    - You can also drag and drop the widget to another spot on the page if you need.
 
 ## Testing
 
