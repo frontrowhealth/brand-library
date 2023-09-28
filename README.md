@@ -4,7 +4,13 @@ This project provides sample code for the Frontrow widget that can be included o
 
 See [this doc](https://docs.google.com/document/d/1hZhBG_1hGyUHoUMWNK-WXQBhqlTAjJpPaZHuGKhPCcU/edit?usp=sharing) to learn more about where the widget should be placed, how to get the provider counts for each product, and other non-technical details.
 
-The sample-screenshots folder in this project shows the widget in the context of each code solution (React, HTML/CSS, Shopify). They are also displayed at the bottom of this file.
+The sample-screenshots folder in this project shows the widget in the context of each major code solution (React, HTML/CSS, Shopify). They are also displayed at the bottom of this file.
+
+The following frameworks have sample code provided:
+- HTML & CSS
+- ReactJS with CSS or tailwind
+- Shopify
+- Framer
 
 ## Mobile & desktop versions
 
@@ -79,6 +85,20 @@ In order to add the custom widget to a shopify store, follow these steps:
 25. Toggle between mobile and desktop views in the top right hand corner.
 
 *The Shopify theme's colors, font sizes, etc. will take over and may overwrite some of the styles seen in the sample screenshots but should match the rest of your site. Feel free to change any styles at this point or leave them as is.
+
+## Framer
+
+1. Add the provided copy to your site where you want the widget to be.
+2. In the side panel:
+    - Make the number and "medical providers" copy bold
+    - Make the number a different color, a non-black brand color is perfect
+3. Create an override for the text section by selecting Code Override in the side panel
+4. Create a new file called frontrow and paste the contents of `framer/frontrow.tsx` into the new file, making sure to delete the default code that was created upon creating the file
+5. Back in the editor, select the new file and the function `someCssOverride`
+    - This override file will add the tile behind the text. Feel free to change the `background` property in that file to match your brand colors
+6. Save a preview by publishing a preview or pressing the "play" button in the top right hand corner
+7. Repeat these steps and reuse the override file & function if you have the widget on any other pages
+
 
 ## Testing
 
