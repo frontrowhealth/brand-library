@@ -19,12 +19,6 @@ All versions account for differences between the desktop and mobile experiences.
 
 *Feel free to make changes to the styling and/or copy for both mobile and desktop. The code provided tested well on user tests done by Frontrow's design team.
 
-You may need to adjust the font size on mobile to make content fit on two lines.
-- For HTML edit: `html/widget.css:67`
-- For React edit: `react/widget.css:62`
-- For Shopify edit: `shopify/frontrow-widget.liquid:90`
-  - Shopify styles already set font-size to 14px on mobile (16px on desktop)
-
 ## Wix
 
 Please reach out to get more guidance how to implement this widget on a wix site. Due to the nature of the builder tool in wix, putting direct html code snippets (like the one provided in this project) aren't well supported.
