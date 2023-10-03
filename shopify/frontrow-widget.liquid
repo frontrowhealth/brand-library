@@ -10,18 +10,18 @@
 
 <frontrow-widget>
   {%- if product.metafields.custom.frontrow_provider_count -%}
-    <div class="container">
+    <div class="frontrow-container">
       <p>
-        <span class="num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
-        <span class="bold">medical providers </span>
-        <span class="text" />
-        <a href="https://thefrontrowhealth.com/overview/" class="link" target="_blank"> Learn more from our partner </a>
+        <span class="fr-num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
+        <span class="fr-bold">medical providers </span>
+        <span class="fr-text" />
+        <a href="https://thefrontrowhealth.com/overview/" class="fr-link" target="_blank"> Learn more from our partner </a>
       </p>
     </div>
   {% endif %}
 </frontrow-widget>
 {% style %}
-  .container {
+  .frontrow-container {
     display: flex;
     padding: 16px;
     align-items: center;
@@ -38,7 +38,7 @@
     margin-bottom: 1rem;
   }
 
-  .num-value {
+  .fr-num-value {
     display: inline-flex;
     height: 22px;
     padding: 4px 6px;
@@ -54,7 +54,7 @@
     box-shadow: 0px 1px 3px 0px rgba(211, 227, 217, 0.40);
   }
 
-  .text {
+  .fr-text {
     flex: 1 0 0;
 
     color: #212121;
@@ -62,17 +62,17 @@
     line-height: 24px;
   }
 
-  .text:before {
+  .fr-text:before {
     content: "recently shared this with their patients, and were not paid to do so! "
   }
 
-  .bold {
+  .fr-bold {
     color: #212121;
     font-weight: 700;
     line-height: 24px;
   }
 
-  .link {
+  .fr-link {
     color: #212121;
     font-weight: 400;
     line-height: 24px;
@@ -80,24 +80,24 @@
   }
 
   @media only screen and (max-width: 768px) {
-    .container {
+    .frontrow-container {
       /* may need to adjust this to make content fit on full lines on mobile */
       font-size: 14px;
     }
 
-    .text {
+    .fr-text {
       line-height: normal;
     }
 
-    .text:before {
+    .fr-text:before {
       content: "recently shared this with their patients, and were not paid to do so! "
     }
 
-    .bold {
+    .fr-bold {
       line-height: normal;
     }
 
-    .link {
+    .fr-link {
       align-self: stretch;
       display: block;
       padding-top: 4px;

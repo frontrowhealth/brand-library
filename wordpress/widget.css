@@ -1,4 +1,4 @@
-.container {
+.frontrow-container {
   display: flex;
   padding: 16px;
   align-items: center;
@@ -15,7 +15,7 @@
   line-height: 28px;
 }
 
-.num-value {
+.fr-num-value {
   height: 24px;
   line-height: 24px;
   padding: 2px 6px 4px 6px; /* top, right, bottom, left */
@@ -30,7 +30,7 @@
   box-shadow: 0px 1px 3px 0px rgba(211, 227, 217, 0.40);
 }
 
-.text {
+.fr-text {
   flex: 1 0 0;
 
   color: #212121;
@@ -38,17 +38,17 @@
   line-height: 24px;
 }
 
-.text:before {
+.fr-text:before {
   content: "recently shared this with their patients, and were not paid to do so! "
 }
 
-.bold {
+.fr-bold {
   color: #212121;
   font-weight: 700;
   line-height: 24px;
 }
 
-.link {
+.fr-link {
   color: #212121;
   font-weight: 400;
   line-height: 24px;
@@ -56,24 +56,24 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .container {
+  .frontrow-container {
     /* may need to adjust this to make content fit on full lines on mobile */
     font-size: 16px;
   }
 
-  .text {
+  .fr-text {
     line-height: normal;
   }
 
-  .text:before {
+  .fr-text:before {
     content: "recently shared this with their patients, and were not paid to do so! "
   }
 
-  .bold {
+  .fr-bold {
     line-height: normal;
   }
 
-  .link {
+  .fr-link {
     align-self: stretch;
     padding-top: 4px;
   }
