@@ -1,21 +1,23 @@
 {% comment %}
-  Renders quantitative frontrow widget
+Renders quantitative frontrow widget
 
-  Usage:
-  {% render 'frontrow-widget' %}
+Usage:
+{% render 'frontrow-widget' %}
 {% endcomment %}
 
 <frontrow-widget>
-  {%- if product.metafields.custom.frontrow_provider_count -%}
-    <div class="frontrow-container">
-      <p>
-        <span class="fr-num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
-        <span class="fr-bold">medical providers </span>
-        <span class="fr-text" />
-        <a href="https://thefrontrowhealth.com/overview/" class="fr-link" target="_blank"> Learn more from our partner </a>
-      </p>
-    </div>
-  {% endif %}
+  <div class="frontrow-container">
+    <p>
+      <!-- TODO: change provider count -->
+      <span class="fr-num-value">210</span>
+      <span class="fr-bold">medical providers
+      </span>
+      <span class="fr-text" />
+      <a href="#frontrow-qual-data" class="fr-link">
+        Learn more from our partner
+      </a>
+    </p>
+  </div>
 </frontrow-widget>
 
 {% style %}
@@ -36,6 +38,10 @@
     margin-bottom: 1rem;
   }
 
+  .frontrow-container > p {
+    margin: 0;
+  }
+
   .fr-num-value {
     display: inline-flex;
     height: 22px;
@@ -49,7 +55,7 @@
     border-radius: 4px;
     border: 1px solid #DAE8DF;
     background: var(--white, #FFF);
-    box-shadow: 0px 1px 3px 0px rgba(211, 227, 217, 0.40);
+    box-shadow: 0 1px 3px 0 rgba(211, 227, 217, 0.40);
   }
 
   .fr-text {
