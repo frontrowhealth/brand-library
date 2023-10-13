@@ -1,27 +1,5 @@
-{% comment %}
-Renders quantitative frontrow widget
-
-Usage:
-{% render 'frontrow-widget' %}
-{% endcomment %}
-
-<frontrow-widget>
-  {%- if product.metafields.custom.frontrow_provider_count -%}
-    <div class="frontrow-container">
-      <p>
-        <span class="fr-num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
-        <span class="fr-bold">medical providers
-        </span>
-        <span class="fr-text" />
-        <a href="#frontrow-qual-data" class="fr-link">
-          Hear why they shared this product with patients
-        </a>
-      </p>
-    </div>
-  {% endif %}
-</frontrow-widget>
-
-{% style %}
+<!-- START: quantitative data widget styles START -->
+<style>
   .frontrow-container {
     display: flex;
     padding: 16px;
@@ -39,10 +17,6 @@ Usage:
     margin-bottom: 1rem;
   }
 
-  .frontrow-container > p {
-    margin: 0;
-  }
-
   .fr-num-value {
     display: inline-flex;
     height: 22px;
@@ -56,7 +30,7 @@ Usage:
     border-radius: 4px;
     border: 1px solid #DAE8DF;
     background: var(--white, #FFF);
-    box-shadow: 0 1px 3px 0 rgba(211, 227, 217, 0.40);
+    box-shadow: 0px 1px 3px 0px rgba(211, 227, 217, 0.40);
   }
 
   .fr-text {
@@ -87,7 +61,7 @@ Usage:
   @media only screen and (max-width: 768px) {
     .frontrow-container {
       /* may need to adjust this to make content fit on full lines on mobile */
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .fr-text {
@@ -108,4 +82,5 @@ Usage:
       padding-top: 4px;
     }
   }
-{% endstyle %}
+</style>
+<!-- END: quantitative data widget styles -->
