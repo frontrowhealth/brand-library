@@ -7,13 +7,13 @@ Usage:
 
 <frontrow-widget>
   {%- if product.metafields.custom.frontrow_provider_count -%}
-    <div class="frontrow-container">
+    <div class="container">
       <p>
-        <span class="fr-num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
-        <span class="fr-bold">medical providers
+        <span class="num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
+        <span class="bold">medical providers
         </span>
-        <span class="fr-text" />
-        <a href="#frontrow-qual-data" class="fr-link">
+        <span class="text" />
+        <a href="#frontrow-qual-data" class="link">
           Hear why they shared this product with patients
         </a>
       </p>
@@ -22,7 +22,7 @@ Usage:
 </frontrow-widget>
 
 {% style %}
-  .frontrow-container {
+  .container {
     display: flex;
     padding: 16px;
     align-items: center;
@@ -39,11 +39,11 @@ Usage:
     margin-bottom: 1rem;
   }
 
-  .frontrow-container > p {
+  .container > p {
     margin: 0;
   }
 
-  .fr-num-value {
+  .num-value {
     display: inline-flex;
     height: 22px;
     padding: 4px 6px;
@@ -59,7 +59,7 @@ Usage:
     box-shadow: 0 1px 3px 0 rgba(211, 227, 217, 0.40);
   }
 
-  .fr-text {
+  .text {
     flex: 1 0 0;
 
     color: #212121;
@@ -67,17 +67,17 @@ Usage:
     line-height: 24px;
   }
 
-  .fr-text:before {
+  .text:before {
     content: "recently shared this with their patients, and were not paid to do so! "
   }
 
-  .fr-bold {
+  .bold {
     color: #212121;
     font-weight: 700;
     line-height: 24px;
   }
 
-  .fr-link {
+  .link {
     color: #212121;
     font-weight: 400;
     line-height: 24px;
@@ -85,24 +85,24 @@ Usage:
   }
 
   @media only screen and (max-width: 768px) {
-    .frontrow-container {
+    .container {
       /* may need to adjust this to make content fit on full lines on mobile */
       font-size: 14px;
     }
 
-    .fr-text {
+    .text {
       line-height: normal;
     }
 
-    .fr-text:before {
+    .text:before {
       content: "recently shared this with their patients, and were not paid to do so! "
     }
 
-    .fr-bold {
+    .bold {
       line-height: normal;
     }
 
-    .fr-link {
+    .link {
       align-self: stretch;
       display: block;
       padding-top: 4px;
