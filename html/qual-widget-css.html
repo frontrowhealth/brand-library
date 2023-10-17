@@ -6,10 +6,8 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    border-radius: 35px;
 
-    /* TODO: change to light brand color */
-    background: rgba(250, 224, 215, 0.70);
+    background: #EFECE2;
   }
 
   .fr-header {
@@ -31,22 +29,12 @@
     margin-bottom: 0;
   }
 
-  .fr-header > p {
-    align-self: stretch;
-    color: #414B66;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 0;
-  }
-
   .quant-data-mobile {
     display: none;
   }
 
   .fr-pr-bold {
-    font-weight: 800;
+    font-weight: 700;
   }
 
   .fr-review-container {
@@ -84,25 +72,16 @@
 
     border-radius: 8px;
 
-    /* TODO(optional): gray tags -- can be changed to another light brand color */
-    background: rgba(98, 110, 147, 0.10);
+    background: rgba(244, 241, 234, 0.60);
 
-    /* TODO(optional): font color for icon and text can be changed */
-    color: #0F1834;
+    color: #212121;
     text-align: center;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
   }
 
   .doctor-details {
-    color: #414B66;
-    text-align: right;
+    color: #212121;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
   }
 
   .doctor-details-mobile {
@@ -111,19 +90,15 @@
 
   .fr-review-title {
     flex: 1 0 0;
-    color: #0F1834;
+    color: #2A2A2A;
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
     line-height: 32px;
   }
 
   .fr-review-text {
-    align-self: stretch;
     color: #0F1834;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 24px;
     margin-top: -8px;
   }
@@ -131,31 +106,24 @@
   .fr-learn-more {
     color: #0F1834;
     text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 22px;
     margin-top: 8px;
   }
 
   a.fr-learn-more {
-    color: #0F1834;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 22px;
+    font-weight: 700;
     text-decoration-line: underline;
 
-    display: inline-block;
-  }
-
-  .fr-learn-more > p {
-    margin-top: 0;
+    display: inline;
   }
 
   @media only screen and (max-width: 768px) {
     .fr-header > p {
       display: none;
+    }
+
+    .fr-header {
+      margin-top: 24px;
     }
 
     .quant-data-mobile {
@@ -166,11 +134,7 @@
     }
 
     .quant-data-mobile > p:first-child {
-      margin-top: 0;
-    }
-
-    .quant-data-mobile > p:last-child {
-      margin-bottom: 0;
+      margin-bottom: 16px;
     }
 
     .doctor-details {
@@ -179,7 +143,7 @@
 
     .doctor-details-mobile {
       display: block;
-      color: #414B66;
+      color: #212121;
       text-align: left;
       font-size: 14px;
       margin-top: -8px;
@@ -188,11 +152,7 @@
     .fr-learn-more {
       font-size: 14px;
       line-height: 22px;
-    }
-
-    a.fr-learn-more {
-      font-size: 14px;
-      line-height: 22px;
+      margin-bottom: 32px;
     }
 
     .frontrow-qual-data {
@@ -201,6 +161,7 @@
 
     .fr-review-container {
       padding: 16px 16px 24px;
+      gap: 24px;
     }
 
     .fr-tag-row {
