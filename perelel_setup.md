@@ -20,6 +20,13 @@ See code in `/shopify`.
 1. Scroll to the bottom of the page. Add the value in the new metafield input. Save the product.
 1. Repeat this process for any other products you have the provider count for.
 
+Provider counts as of 10/17
+- Conception support - 274
+- PCOS - 187
+- 1st trimester - 212
+- 2nd trimester - 212
+- 3rd trimester - 211
+
 #### Add quantitative code snippet to product details page
 1. Navigate to the "Online Store" section in the left hand navigation.
 1. On the themes page, select the three dots icon and go to "Edit Code".
