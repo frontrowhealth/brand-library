@@ -1,4 +1,6 @@
 <!-- START: qualitative data widget styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
   .frontrow-qual-data {
     display: flex;
@@ -6,10 +8,8 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    border-radius: 35px;
 
-    /* TODO: change to light brand color */
-    background: rgba(250, 224, 215, 0.70);
+    background: #EAEEE4;
   }
 
   .fr-header {
@@ -17,28 +17,20 @@
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    align-self: stretch;
     margin-bottom: 8px;
   }
 
   .fr-title {
-    color: #0F1834;
+    color: #355756;
+
     text-align: center;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
-    margin-bottom: 0;
+    font-size: 48px;
+    font-family: var(--font-cormorant);
+    font-weight: 700;
   }
 
   .fr-header > p {
-    align-self: stretch;
-    color: #414B66;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 0;
+    color: #355756;
   }
 
   .quant-data-mobile {
@@ -55,9 +47,7 @@
     padding: 32px 32px 48px;
     align-items: flex-start;
     gap: 32px;
-    align-self: stretch;
     border-radius: 16px;
-    border: 1px solid #F7F7F7;
     background: #FFF;
   }
 
@@ -81,28 +71,15 @@
     padding: 12px 16px;
     align-items: center;
     gap: 8px;
-
     border-radius: 8px;
-
-    /* TODO(optional): gray tags -- can be changed to another light brand color */
-    background: rgba(98, 110, 147, 0.10);
-
-    /* TODO(optional): font color for icon and text can be changed */
-    color: #0F1834;
+    background: #ECF6F0;
     text-align: center;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
   }
 
   .doctor-details {
-    color: #414B66;
     text-align: right;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
   }
 
   .doctor-details-mobile {
@@ -110,7 +87,6 @@
   }
 
   .fr-review-title {
-    flex: 1 0 0;
     color: #0F1834;
     font-size: 18px;
     font-style: normal;
@@ -119,38 +95,20 @@
   }
 
   .fr-review-text {
-    align-self: stretch;
-    color: #0F1834;
+    color: #424242;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
     margin-top: -8px;
   }
 
   .fr-learn-more {
-    color: #0F1834;
     text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
     margin-top: 8px;
   }
 
   a.fr-learn-more {
-    color: #0F1834;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 22px;
+    font-weight: 700;
     text-decoration-line: underline;
-
     display: inline-block;
-  }
-
-  .fr-learn-more > p {
-    margin-top: 0;
   }
 
   @media only screen and (max-width: 768px) {
@@ -158,19 +116,21 @@
       display: none;
     }
 
+    .fr-title {
+      font-size: 36px;
+      line-height: 40px;
+    }
+
     .quant-data-mobile {
       display: block;
       text-align: left;
       line-height: 18px;
       font-size: 12px;
+      color: #355756;
     }
 
     .quant-data-mobile > p:first-child {
-      margin-top: 0;
-    }
-
-    .quant-data-mobile > p:last-child {
-      margin-bottom: 0;
+      margin-bottom: 8px;
     }
 
     .doctor-details {
@@ -179,7 +139,6 @@
 
     .doctor-details-mobile {
       display: block;
-      color: #414B66;
       text-align: left;
       font-size: 14px;
       margin-top: -8px;
@@ -190,13 +149,8 @@
       line-height: 22px;
     }
 
-    a.fr-learn-more {
-      font-size: 14px;
-      line-height: 22px;
-    }
-
     .frontrow-qual-data {
-      padding: 10px 20px;
+      padding: 40px 10px;
     }
 
     .fr-review-container {
@@ -210,7 +164,7 @@
     }
 
     .fr-tag {
-      font-size: 11px;
+      font-size: 12px;
     }
 
     .fr-review-title {
