@@ -54,7 +54,7 @@ In addition to the widget, there is code for the modal and code for handling the
 
 In order to add the custom widget to a shopify store, follow these steps:
 
-#### Add metafield definition
+#### Add metafield definition for provider count
 
 *You can skip this step if you already have the quantitative widget setup.*
 
@@ -63,51 +63,80 @@ In order to add the custom widget to a shopify store, follow these steps:
 3. In the new pop up window, scroll down on the left side navigation and select "Custom Data".
 4. Select "Products".
 5. In the top right hand corner, click, "Add definition".
-6. In the screen recording I already have a definition called frontrow-provider-count. Create a new metafield definition, called frontrow-provider-count and add the type integer. A description, minimum value, and maximum value are not required.
+6. Create a new metafield definition, called `frontrow-provider-count` and add the type integer. A description, minimum value, and maximum value are not required.
 7. Click "Save".
-8. Exit out of the settings modal.
+
+
+#### Add metafield definition
+
+*You can skip this step if all of your products have BOTH quantiative and qualitative data.*
+
+1. Add another definition called, `frontrow-no-reviews` with type "Single line string"
+1. Click "Save".
+1. Exit out of the settings modal.
 
 
 #### Add provider count metafield values for targeted products
 
-*You can skip this step if you already have v1 of the widget setup.*
+*You can skip this step if you already have the quantitative widget setup.*
 
 1. Navigate to the "Products" section in the left hand navigation.
 2. Select the product you want to add a provider count for.
 3. Scroll to the bottom of the page. Add the value in the new metafield input. Save the product.
 4. Repeat this process for any other products you have the provider count for.
 
+#### Add metafield value for products that have no provider testimonials
+
+*You can skip this step if all of your products have BOTH quantiative and qualitative data.*
+
+1. Navigate to the "Products" section in the left hand navigation.
+2. Select a product that has ONLY quantitative data.
+3. Scroll to the bottom of the page. Add the value `true` in the new metafield input. Save the product.
+1. Repeat this process for any products that have ONLY quantitative data.
+
 #### Add quantitative code snippet to product details page
 
-*If you already have the quantitative widget setup, replace the code in `frontrow-widget.liquid` with the content of `./shopify/frontrow-widget.liquid`*
+**If you have some products with both qualitative and quantitative data and some with only quantitative data, use the file suffixed with `-with-optional-qual` in the respective `no-modal` folder or `with-modal` folder.**
+
+**If you are using a metafield, be sure to use the file suffixed with `with-metafield` in the respective `no-modal` folder or `with-modal` folder.**
 
 1. Navigate to the "Online Store" section in the left hand navigation.
 2. On the themes page, select the three dots icon and go to "Edit Code".
 3. In the left hand navigation, find the section called snippets and click "Add a new snippet"
-4. Name the file `frontrow-widget.liquid`, enter just `frontrow-widget` in the file name input box.
-5. Copy and paste the code from `./shopify/frontrow-widget.liquid` from this project into  your new file in Shopify. Save.
+4. Name the file `frontrow-quant-widget.liquid`, enter just `frontrow-quant-widget` in the file name input box.
+5. Copy and paste the code from the quantiative file specified in the bold details above into your new file in Shopify. Save.
 6. Go back to the file directory on the left hand side of the page and search for `product.liquid`. You are looking for the main product page for your Shopify site. This file could be named `main–product.liquid`, `product.liquid`, or `product-template.liquid`.
 7. Scroll down until you find the section above where you want the frontrow widget to be. For example, in the screen recording I found the 'title' section. Just below the section (likely ending in `</div>`)
 8. Add this code snippet: `{% include 'frontrow-widget' %}`. This will include the widget in all product details pages where there is a value for the metafield we added at the beginning. Save the file.
     - If your product page is broken down into smaller components, you may need to add the snippet in another file. Find the correct file and, add this line instead: `{% render 'frontrow-widget' %}`.
 
+#### Create stylesheet and javascript files
+1. In the left navigation, look for the "Assets" folder and select "Add a new asset". Click the second tab to create a new file with the extension `css`.
+1. Call the file `frontrow.css`.
+1. Copy the contents of `/shopify/with-modal/frontrow.css` in the new file. Save.
+    - Use `shopify/no-modal/frontrow.css` if you aren't adding the modal.
+1. Add another asset, new file with extension `js`. Call the file `frontrow.js`
+    - Skip this step if you aren't adding the modal.
+1. Copy the contents of `/shopify/frontrow.js` into the new file. Save.
 
-#### Add modal and styles to website
 
-*optional*
-
-5. In the file explorer, find the folder called 'Assets' and select 'Add a new asset'.
-6. Click 'Create a blank file' with the extension 'css', with the filename `frontrow`. Then click 'Done'.
-7. Copy the content from `./shopify/frontrow-widget.css` into this new file. Save.
-1. Find the file containing the `<head>` section of your website. e.g. `theme.liquid`
-2. In that section, add these lines of code:
+#### Add styles and javascript files to header
+1. Search in the file explorer for `theme.liquid`. We are looking for the `<head>` section of your site.
+1. In the `<head>` section, add the following lines of code:
+(the last line is only required if you added the modal)
 ```
-{{ 'frontrow-widget.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{{ 'frontrow.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'frontrow.js' | asset_url }}" defer="defer"></script>
 ```
-3. Search for `</script>`. Under that, add the content of `./shopify/script.html`.
-4. Search for `<body>`. Under that, add the content of `./shopify/modal.html`. Save.
-8. Save all files and navigate out of the code editor back to the main page for your Shopify site.
+
+#### Add modal to site globally
+
+*only required if you're using the modal*
+
+1. In the same file, `theme.liquid`, find the `<body>` section.
+1. Inside that section, add the content of `/shopify/with-modal/modal.html`.
+1. Save all files and navigate out of the code editor back to the main page for your Shopify site.
 
 
 #### Add qualitative code snippet to product details page
@@ -128,11 +157,12 @@ In order to add the custom widget to a shopify store, follow these steps:
 
 
 #### Preview widget on the store
-3. You should see the widget displayed under the product title (or wherever you chose to add the widget).
-4. You can also verify that the widget doesn't show up on product pages that don't have a provider count.
-5. Toggle between mobile and desktop views in the top right hand corner.
+1. You should see the quantitative data widget displayed under the product title (or wherever you chose to add the widget).
+1. You can also verify that the widget doesn't show up on product pages that don't have a provider count.
+1. Toggle between mobile and desktop views in the top right hand corner.
 1. The link in the quantitative widget should link down to the provider testimonials section.
-1. Save and preview. Test that the link in the quantitative data snippet goes to the reviews section.
+1. If you're using the modal, verify that the "Frontrow Health" link at the bottom of the reviews section opens the modal.
+1. If you have some products with just quantitative data, verify that the link opens to correct content. Either the modal or a new tab to Frontrow's overview page.
     - *If you created a copy of your theme, you can now publish it from the shopify dashboard.*
 
 
