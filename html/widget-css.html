@@ -1,22 +1,5 @@
-{% comment %}
-  Renders quantitative frontrow widget
-
-  Usage:
-  {% render 'frontrow-widget' %}
-{% endcomment %}
-
-<frontrow-widget>
-  <div class="frontrow-container">
-    <p>
-      <span class="fr-num-value">210</span>
-      <span class="fr-bold">medical providers </span>
-      <span class="fr-text" />
-      <a href="https://thefrontrowhealth.com/overview/" class="fr-link" target="_blank"> Learn more from our partner </a>
-    </p>
-  </div>
-</frontrow-widget>
-
-{% style %}
+<!-- START: quantitative data widget styles START -->
+<style>
   .frontrow-container {
     display: flex;
     padding: 16px;
@@ -78,7 +61,7 @@
   @media only screen and (max-width: 768px) {
     .frontrow-container {
       /* may need to adjust this to make content fit on full lines on mobile */
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .fr-text {
@@ -99,4 +82,5 @@
       padding-top: 4px;
     }
   }
-{% endstyle %}
+</style>
+<!-- END: quantitative data widget styles -->

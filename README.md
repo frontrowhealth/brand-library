@@ -1,61 +1,62 @@
 # brand-library
 
-This project provides sample code for the Frontrow widget that can be included on brand partners' websites. This widget displays the number of provider pages a specific product has been added to.
+This project provides sample code for the Frontrow widgets that can be included on brand partners' websites.
 
-See [this doc](https://docs.google.com/document/d/1hZhBG_1hGyUHoUMWNK-WXQBhqlTAjJpPaZHuGKhPCcU/edit?usp=sharing) to learn more about where the widget should be placed, how to get the provider counts for each product, and other non-technical details.
+Widgets:
+1. Quantitative -- shows the number of providers that shared a product on their Frontrow page
+2. Qualitative -- shows real reviews from providers that shared a product and details on how data is collected
 
-The sample-screenshots folder in this project shows the widget in the context of each major code solution (React, HTML/CSS, Shopify). They are also displayed at the bottom of this file.
+If you only want to use the quantitative data, refer to the code and documentation in [this link](https://github.com/frontrowhealth/brand-library/tree/widget-v1) instead.
 
-The following frameworks have sample code provided:
+Additional details provided in [this doc](https://docs.google.com/document/d/1hZhBG_1hGyUHoUMWNK-WXQBhqlTAjJpPaZHuGKhPCcU/edit?usp=sharing) including:
+- How to create a temporary editor user
+- Context on widgets
+
+**Most CMSs (Shopify, Wordpress, Wix, etc.) can have a temporary editor user. Then our team can do the implementation! We would never publish to your live site, we can make the changes for you to review and you can publish them.**
+
+The sample-screenshots folder in this project shows the widgets in the context of the different platforms code is provided for.
+
+The quantitative data widget has sample code for:
 - HTML & CSS
 - ReactJS with CSS or tailwind
 - Shopify
 - Framer
 - Wordpress (with elementor plugin)
 
-## Mobile & desktop versions
+The qualitative data widget has sample code for:
+- HTML & CSS
+- Shopify
+
+**Mobile & desktop versions**
 
 All versions account for differences between the desktop and mobile experiences. There are slight styling and copy changes between the 2 versions so it's important to include all code for whichever version is being used.
 
 *Feel free to make changes to the styling and/or copy for both mobile and desktop. The code provided tested well on user tests done by Frontrow's design team.
 
-## Wix
 
-Please reach out to get more guidance how to implement this widget on a wix site. Due to the nature of the builder tool in wix, putting direct html code snippets (like the one provided in this project) aren't well supported.
+## HTML (Quant & Qual)
 
-Temporary edit access can be provided to a Frontrow engineer to make the changes themselves if that is preferred by the client.
+`./html` has a code snippet for the quantitative data. Put this code near the title or star rating for your product. Copy the css into the designated area for your site.
 
-## Wix
+The qualitative data snippet is also provided in `./html`. Put this snippet at the bottom of your site. The link in the first widget will link to the reviews section. Be sure to copy the qualitative widget css into your site too.
 
-Please reach out to get more guidance how to implement this widget on a wix site. Due to the nature of the builder tool in wix, putting direct html code snippets (like the one provided in this project) aren't well supported.
+#### Add access to font awesome icons
+In the `<head>` section of your site, paste the following line of code:
+```
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+```
 
-Temporary edit access can be provided to a Frontrow engineer to make the changes themselves if that is preferred by the client.
+## Shopify (Quant & Qual)
 
-## React
+**Create a copy of your theme if you want to edit without affecting the live site. When all changes are done, the copied theme can be published.**
 
-The react directory has a sample component for how many providers have added a product to their Frontrow Health page. This component should be copied into the health brand's project.
-
-There is a version using css and a version using tailwind css classes.
-
-The css should be copied into the health brand's project into the correct location for styles.
-
-No other action needs to be taken for the tailwind version assuming tailwind is correctly installed and imported into the project already.
-
-## HTML
-
-The html directory has a sample page showing the widget for how many providers have added a product to their Frontrow Health page. This code can be copied into an html webpage. The css for the page is in its own file in the same directory. Be sure to include those styles in the website/app.
-
-## Shopify
-
-This version of the widget includes a modal. To view the static version, go [here](https://github.com/frontrowhealth/brand-library/tree/widget-v1).
-
-In addition to the widget, there is code for the modal and code for handling the interaction between the widget and modal (script). All code is located in `./shopify/`.
+In addition to the widget, there is code for the modal and code for handling the interaction between the widget and modal (script). All code is located in `./shopify`.
 
 In order to add the custom widget to a shopify store, follow these steps:
 
 #### Add metafield definition
 
-*You can skip this step if you already have v1 of the widget setup.*
+*You can skip this step if you already have the quantitative widget setup.*
 
 1. Login to the Shopify admin portal.
 2. Select "Settings" from the navigation on the left side of the page.
@@ -66,9 +67,19 @@ In order to add the custom widget to a shopify store, follow these steps:
 7. Click "Save".
 8. Exit out of the settings modal.
 
-#### Add code snippet to product details page
 
-*If you already have v1 of the widget setup, replace the code in frontrow-widget.liquid with the content of `./shopify/frontrow-widget.liquid`*
+#### Add provider count metafield values for targeted products
+
+*You can skip this step if you already have v1 of the widget setup.*
+
+1. Navigate to the "Products" section in the left hand navigation.
+2. Select the product you want to add a provider count for.
+3. Scroll to the bottom of the page. Add the value in the new metafield input. Save the product.
+4. Repeat this process for any other products you have the provider count for.
+
+#### Add quantitative code snippet to product details page
+
+*If you already have the quantitative widget setup, replace the code in `frontrow-widget.liquid` with the content of `./shopify/frontrow-widget.liquid`*
 
 1. Navigate to the "Online Store" section in the left hand navigation.
 2. On the themes page, select the three dots icon and go to "Edit Code".
@@ -80,36 +91,64 @@ In order to add the custom widget to a shopify store, follow these steps:
 8. Add this code snippet: `{% include 'frontrow-widget' %}`. This will include the widget in all product details pages where there is a value for the metafield we added at the beginning. Save the file.
     - If your product page is broken down into smaller components, you may need to add the snippet in another file. Find the correct file and, add this line instead: `{% render 'frontrow-widget' %}`.
 
+
 #### Add modal and styles to website
-1. Find the file containing the `<head>` section of your website. e.g. `theme.liquid`
-2. Search for `{% endstyle %}`, paste this line below that.
-    `{{ 'frontrow-widget.css' | asset_url | stylesheet_tag }}`
-3. Search for `</script>`. Under that, add the content of `./shopify/script.html`.
-4. Search for `</head>`. Under that, add the content of `./shopify/modal.html`. Save.
-5. In the file explorer, find the folder called 'assets' and select 'Add a new asset'.
-6. Click 'Create a blank file' with the extension 'css', with the filename `frontrow-widget`. Then click 'Done'.
+
+*optional*
+
+5. In the file explorer, find the folder called 'Assets' and select 'Add a new asset'.
+6. Click 'Create a blank file' with the extension 'css', with the filename `frontrow`. Then click 'Done'.
 7. Copy the content from `./shopify/frontrow-widget.css` into this new file. Save.
+1. Find the file containing the `<head>` section of your website. e.g. `theme.liquid`
+2. In that section, add these lines of code:
+```
+{{ 'frontrow-widget.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+```
+3. Search for `</script>`. Under that, add the content of `./shopify/script.html`.
+4. Search for `<body>`. Under that, add the content of `./shopify/modal.html`. Save.
 8. Save all files and navigate out of the code editor back to the main page for your Shopify site.
 
-#### Add provider count metafield values for targeted products
 
-*You can skip this step if you already have v1 of the widget setup.*
+#### Add qualitative code snippet to product details page
+1. Go to "Customize" the site. And navigate to the desired product page.
+1. Click in the visual editor where you want to add the qualitative data widget, likely just above the site footer. Select "Custom liquid".
 
-1. Navigate to the "Products" section in the left hand navigation.
-2. Select the product you want to add a provider count for.
-3. Scroll to the bottom of the page. Add the value in the new metafield input. Save the product.
-4. Repeat this process for any other products you have the provider count for.
+**Frontrow can provide a version of these files that have the quotes, provider counts, and styles updated to your own styling and product specifications. Ignore these steps if you have a custom version provided.**
+1. Copy the code from `./shopify/qualitative-data.liquid` into a new file on your desktop. Find the TODOs in the file and input the proper values.
+    - *You can use the code in `./shopify/qualitative-data-with-metafield.liquid` if you have a metafield for the provider count.*
+    - Provider count
+    - Reviewer location & date (repeat for second review)
+    - Review title & description (repeat for second review)
+1. At this point you can also change the background color or other styles to match your own branding. Fonts will automatically match your global font.
+1. If you have more than 2 reviews, copy the section with `class="fr-review-container"` and paste below the other `class="fr-review-container"`s. Make sure to input the right data again.
+
+**Resume directions here if you have a custom version provided.**
+1. Copy the code from the edited file or the provided version of the qualitative data snippet into the shopify editor "Custom liquid" section.
+
 
 #### Preview widget on the store
-1. Navigate to "Online Store" again. Next to the theme, click "Customize".
-2. Click on a product you added a provider value for.
 3. You should see the widget displayed under the product title (or wherever you chose to add the widget).
 4. You can also verify that the widget doesn't show up on product pages that don't have a provider count.
 5. Toggle between mobile and desktop views in the top right hand corner.
+1. The link in the quantitative widget should link down to the provider testimonials section.
+1. Save and preview. Test that the link in the quantitative data snippet goes to the reviews section.
+    - *If you created a copy of your theme, you can now publish it from the shopify dashboard.*
 
-*The Shopify theme's colors, font sizes, etc. will take over and may overwrite some of the styles seen in the sample screenshots but should match the rest of your site. Feel free to change any styles at this point or leave them as is.
 
-## Framer
+## Wix
+
+Please reach out to get more guidance how to implement this widget on a wix site. We haven't yet found a good way to share code snippets for wix.
+
+Temporary edit access can be provided to a Frontrow engineer to make the changes themselves if that is preferred by the client.
+
+## React (Quant only)
+
+1. Copy the component from `./react/widget.js` or `./react/widget-with-tailwind.js` depending on if you use tailwind or not.
+1. If you're not using tailwind, copy the styles from `./react/widget.css` into the desired stylesheet.
+
+
+## Framer (Quant only)
 
 1. Add the provided copy to your site where you want the widget to be.
 2. In the side panel:
@@ -122,23 +161,17 @@ In order to add the custom widget to a shopify store, follow these steps:
 6. Save a preview by publishing a preview or pressing the "play" button in the top right hand corner
 7. Repeat these steps and reuse the override file & function if you have the widget on any other pages
 
-## Wordpress (with elementor)
+## Wordpress (with elementor; Quant only)
 
 1. In the elementor editor, click to add a new section where you want the snippet to be.
 2. Search for html in the elements panel
 3. Select the html type
-4. Copy the code from `wordpress/widget.html` in the code section
+4. Copy the code from `./wordpress/widget.html` in the code section
 5. In the next tab, Advanced, scroll to the bottom and select "Custom CSS"
-6. Copy the code from `wordpress/widget.css` in the code section
+6. Copy the code from `./wordpress/widget.css` in the code section
 7. You should see the widget as intended. Feel free to change colors to match your own branding at this point.
     - You can also drag and drop the widget to another spot on the page if you need.
 
-## Testing
-
-The component can be modified and tested in an online code editor like codedamn. Below are 2 playgrounds for the sample code provided in this repo.
-
-- React playground: https://codedamn.com/playground/Wjw9IFI7NI1lPnkCBhbpd
-- HTML playground: https://codedamn.com/playground/u9_00kMdzkBeex7bJqXX3
 
 ## Screenshots
 
