@@ -34,7 +34,7 @@
 
 #### Add code snippet to product details page
 1. In the left hand navigation, find the section called snippets and click "Add a new snippet"
-1. Name the file `frontrow-widget.liquid`, enter just `frontrow-widget` in the file name input box.
+1. Name the file `frontrow-quant-widget.liquid`, enter just `frontrow-quant-widget` in the file name input box.
 1. Copy and paste the code from `./shopify/quantitative-widget.liquid` from this project into your new file in Shopify. Save.
 1. Go back to the file directory on the left hand side of the page and search for `product.liquid`. You are looking for the main product page for your Shopify site. This file could be named `main–product.liquid`, `product.liquid`, or `product-template.liquid`.
 1. Scroll down until you find the section above where you want the frontrow widget to be. For example, below the title.
@@ -47,3 +47,24 @@
 1. Click in the visual editor where you want to add the qualitative data widget, likely just above the site footer. Select "Custom liquid".
 1. Copy the code from `./shopify/qualitative-data.liquid` and paste it into the input box for "custom liquid".
 1. Save and preview site. Test that the link in the quantitative data snippet goes to the reviews section.
+
+
+### Later if you add more products to our store
+#### Add metafield definition
+
+*You can skip this step if all of your products have BOTH quantiative and qualitative data.*
+
+1. Add another definition called, `frontrow-no-reviews` with type "Single line string"
+1. Click "Save".
+1. Exit out of the settings modal.
+
+#### Add metafield value for products that have no provider testimonials
+
+*You can skip this step if all of your products have BOTH quantiative and qualitative data.*
+
+1. Navigate to the "Products" section in the left hand navigation.
+2. Select a product that has ONLY quantitative data.
+3. Scroll to the bottom of the page. Add the value `true` in the new metafield input. Save the product.
+1. Repeat this process for any products that have ONLY quantitative data.
+
+Be sure to update the metafield value for provider count for these products too. The quantitative data widget will show up automatically and will link to Frontrow's overview page if there aren't provider testimonials for that products.
