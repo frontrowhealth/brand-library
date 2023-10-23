@@ -1,12 +1,10 @@
 .frontrow-container {
   display: flex;
   padding: 16px;
-  align-items: center;
 
   border-radius: 8px;
-  background: #F8FBF9;
+  background: rgba(226, 139, 239, 0.21);
 
-  flex-direction: column;
   max-width: 100%;
 
   margin-top: 1rem;
@@ -16,12 +14,8 @@
 }
 
 .fr-num-value {
-  height: 24px;
   line-height: 24px;
   padding: 2px 6px 4px 6px; /* top, right, bottom, left */
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
   font-weight: 700;
 
   border-radius: 4px;
@@ -31,15 +25,9 @@
 }
 
 .fr-text {
-  flex: 1 0 0;
-
   color: #212121;
   font-weight: 400;
   line-height: 24px;
-}
-
-.fr-text:before {
-  content: "recently shared this with their patients, and were not paid to do so! "
 }
 
 .fr-bold {
@@ -57,24 +45,10 @@
 
 @media only screen and (max-width: 768px) {
   .frontrow-container {
-    /* may need to adjust this to make content fit on full lines on mobile */
-    font-size: 16px;
-  }
-
-  .fr-text {
-    line-height: normal;
-  }
-
-  .fr-text:before {
-    content: "recently shared this with their patients, and were not paid to do so! "
-  }
-
-  .fr-bold {
-    line-height: normal;
+    font-size: 14px;
   }
 
   .fr-link {
-    align-self: stretch;
-    padding-top: 4px;
+    display: block;
   }
 }
