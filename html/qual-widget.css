@@ -2,12 +2,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-p {
-  margin: 0;
-}
-
-
-
 .frontrow-qual-data {
   display: flex;
   padding: 56px 80px;
@@ -27,6 +21,7 @@ p {
   gap: 16px;
   align-self: stretch;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .fr-title {
@@ -41,12 +36,20 @@ p {
 
 .fr-header > p {
   align-self: stretch;
-  color: #414B66;
+  color: #424242;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
   margin: 0;
+}
+
+.fr-header > p > .fr-note {
+  display: inline;
+}
+
+.fr-note {
+  display: none;
 }
 
 .quant-data-mobile {
@@ -62,7 +65,7 @@ p {
   flex-direction: column;
   padding: 32px 32px 48px;
   align-items: flex-start;
-  gap: 32px;
+  gap: 24px;
   align-self: stretch;
   border-radius: 16px;
   border: 1px solid #F7F7F7;
@@ -85,7 +88,7 @@ p {
   object-fit: cover;
 }
 
-.fr-doctor-name {
+.fr-doctor-title {
   color: #0F1834;
   font-size: 16px;
   font-style: normal;
@@ -104,15 +107,7 @@ p {
   display: none;
 }
 
-.fr-doctor-history > span {
-  color: var(--grey-800, #424242);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.fr-doctor-history {
+.fr-doctor-local {
   color: var(--grey-800, #424242);
   font-size: 12px;
   font-style: normal;
@@ -131,21 +126,8 @@ p {
   align-items: center;
 }
 
-.fr-review-header-title > .fr-doctor-history {
+.fr-review-header-title > .fr-doctor-local {
   display: none;
-}
-
-.fr-review-header > .fr-tags {
-  display: none;
-}
-
-.fr-tag-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
-  width: 100%;
 }
 
 .fr-tags {
@@ -154,15 +136,6 @@ p {
   gap: 10px;
   align-items: center;
   align-self: stretch;
-}
-
-.fr-tags > p {
-  color: #0F1834;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin: 0;
 }
 
 .fr-tag {
@@ -197,6 +170,7 @@ p {
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  margin-top: 8px;
 }
 
 .fr-review-text {
@@ -206,21 +180,35 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  margin-top: -8px;
+  margin-top: -4px;
+}
+
+.review-footer {
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid var(--grey-200, #EEE);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #424242;
+}
+
+.review-footer > p {
+  margin: 0;
 }
 
 .fr-learn-more {
-  color: #0F1834;
+  color: #212121;
   text-align: center;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
-  margin-top: 8px;
 }
 
 a.fr-learn-more {
-  color: #0F1834;
+  color: #212121;
   font-size: 16px;
   font-style: normal;
   font-weight: 800;
@@ -234,64 +222,13 @@ a.fr-learn-more {
   margin-top: 0;
 }
 
-.fr-date {
-  color: var(--grey-800, #424242);
-  text-align: right;
-  leading-trim: both;
-  text-edge: cap;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
 @media only screen and (max-width: 768px) {
-  .fr-header > p {
+  .fr-review-header-text > .fr-doctor-local {
     display: none;
   }
 
-  .quant-data-mobile {
-    display: block;
-    text-align: left;
-    line-height: 18px;
-    font-size: 12px;
-  }
-
-  .quant-data-mobile > p:first-child {
-    margin-top: 0;
-  }
-
-  .quant-data-mobile > p:last-child {
-    margin-bottom: 0;
-  }
-
-  .doctor-details {
-    display: none;
-  }
-
-  .fr-review-header {
-    flex-direction: column;
-  }
-
-  .fr-review-header-text {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .fr-review-header > .fr-doctor-img {
-    display: none;
-  }
-
-  .fr-review-header-text > .fr-doctor-img {
-    display: block;
-  }
-
-  .fr-review-header-text > .fr-doctor-history {
-    display: none;
-  }
-
-  .fr-review-header-title > .fr-tags {
-    display: none;
+  .fr-tags {
+    margin-top: 12px;
   }
 
   .fr-review-header-title {
@@ -301,24 +238,8 @@ a.fr-learn-more {
     gap: 0px;
   }
 
-  .fr-review-header-title > .fr-doctor-history {
+  .fr-review-header-title > .fr-doctor-local {
     display: block;
-  }
-
-  .fr-date {
-    display: none;
-  }
-
-  .fr-review-header > .fr-tags {
-    display: flex;
-  }
-
-  .fr-date-mobile {
-    display: block;
-    color: #414B66;
-    text-align: left;
-    font-size: 14px;
-    margin-top: -8px;
   }
 
   .fr-learn-more {
@@ -336,13 +257,7 @@ a.fr-learn-more {
   }
 
   .fr-review-container {
-    padding: 16px 16px 24px;
-  }
-
-  .fr-tag-row {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
+    padding: 24px 20px 32px;
   }
 
   .fr-tag {
@@ -352,5 +267,18 @@ a.fr-learn-more {
   .fr-review-title {
     font-size: 16px;
     line-height: 28px;
+  }
+
+  .fr-header > p > .fr-note {
+    display: none;
+  }
+
+  .fr-note {
+    display: inline;
+    font-size: 13px;
+  }
+
+  .fr-header > p {
+    font-size: 13px;
   }
 }
