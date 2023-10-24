@@ -7,9 +7,7 @@
     align-items: center;
     gap: 24px;
     border-radius: 35px;
-
-    /* TODO: change to light brand color */
-    background: rgba(250, 224, 215, 0.70);
+    background: #FBE9E3;
   }
 
   .fr-header {
@@ -25,10 +23,10 @@
   .fr-title {
     color: #0F1834;
     text-align: center;
-    font-size: 32px;
+    font-size: 32px !important;
     font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
+    font-weight: 500 !important;
+    line-height: 36px !important;
     margin-bottom: 0;
   }
 
@@ -39,7 +37,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    margin: 0;
+    margin: 0 !important;
   }
 
   .fr-header > p > .fr-note {
@@ -55,7 +53,7 @@
   }
 
   .fr-pr-bold {
-    font-weight: 800;
+    font-weight: 700;
   }
 
   .fr-review-container {
@@ -80,8 +78,8 @@
 
   .fr-doctor-img {
     width: 44px;
-    height: 44px;
-    border-radius: 100px;
+    height: 44px !important;
+    border-radius: 100px !important;
     flex-shrink: 0;
     object-fit: cover;
   }
@@ -92,7 +90,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin: 0;
+    margin: 0px !important;
   }
 
   .fr-review-header-text {
@@ -111,7 +109,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin: 0;
+    margin-bottom: 0px !important;
     margin-top: 4px;
   }
 
@@ -193,7 +191,8 @@
   }
 
   .review-footer > p {
-    margin: 0;
+    margin: 0 !important;
+    line-height: 20px;
   }
 
   .fr-learn-more {
@@ -206,18 +205,17 @@
   }
 
   a.fr-learn-more {
-    color: #212121;
+    color: #212121 !important;
     font-size: 16px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 700 !important;
     line-height: 22px;
-    text-decoration-line: underline;
-
+    text-decoration-line: underline !important;
     display: inline-block;
   }
 
   .fr-learn-more > p {
-    margin-top: 0;
+    margin: 0 !important;
   }
 
   @media only screen and (max-width: 768px) {
@@ -251,7 +249,7 @@
     }
 
     .frontrow-qual-data {
-      padding: 10px 20px;
+      padding: 32px 20px;
     }
 
     .fr-review-container {
@@ -274,10 +272,16 @@
     .fr-note {
       display: inline;
       font-size: 13px;
+      margin: 0 !important;
     }
 
-    .fr-header > p {
+    .fr-header > p, .fr-pr-bold {
       font-size: 13px;
+    }
+
+    .review-footer > p {
+      font-size: 14px;
+      line-height: 20px;
     }
   }
 </style>
