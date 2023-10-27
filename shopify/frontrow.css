@@ -9,7 +9,9 @@
   align-items: center;
 
   border-radius: 8px;
-  background: #F5F2ED;
+  background: rgba(40, 40, 40, 0.06);
+  color: rgb(51, 51, 51);
+  line-height: 22px;
 
   flex-direction: column;
   max-width: 100%;
@@ -42,22 +44,7 @@
 .fr-link {
   font-weight: 400;
   text-decoration-line: underline;
-}
-
-.button-link {
-  background: none !important;
-  border: none;
-  padding: 0!important;
-  font-size: 16px;
-  text-decoration: underline;
-  cursor: pointer;
-
-  /* change this color to brand color */
-  color: rgb(20, 111, 127);
-
-  font-weight: 400;
-  line-height: 24px;
-  text-decoration: underline;
+  color: rgb(51, 51, 51);
 }
 
 @media only screen and (max-width: 768px) {}
@@ -70,10 +57,10 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  border-radius: 35px;
 
-  /* TODO: change to light brand color */
-  background: rgba(250, 224, 215, 0.70);
+  background: #EEE;
+
+  margin-bottom: -50px;
 }
 
 .fr-header {
@@ -119,7 +106,7 @@
 }
 
 .fr-pr-bold {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .fr-review-container {
@@ -273,7 +260,7 @@ a.fr-learn-more {
   color: #212121;
   font-size: 16px;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 22px;
   text-decoration-line: underline;
 
@@ -315,7 +302,8 @@ a.fr-learn-more {
   }
 
   .frontrow-qual-data {
-    padding: 10px 20px;
+    padding: 32px 20px;
+    margin-bottom: -20px;
   }
 
   .fr-review-container {
@@ -338,6 +326,7 @@ a.fr-learn-more {
   .fr-note {
     display: inline;
     font-size: 13px;
+    color: rgb(51, 51, 51);
   }
 
   .fr-header > p {
