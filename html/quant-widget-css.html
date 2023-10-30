@@ -1,5 +1,11 @@
 <!-- START: quantitative data widget styles START -->
 <style>
+  .frontrow-format {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
   .frontrow-container {
     display: flex;
     padding: 16px;
@@ -7,7 +13,7 @@
     gap: 8px;
 
     border-radius: 8px;
-    background: #F8FBF9;
+    background: var(--medium-turquoise);
     background-blend-mode: multiply;
 
     flex-direction: column;
@@ -15,6 +21,11 @@
 
     margin-top: 1rem;
     margin-bottom: 1rem;
+    width: fit-content;
+  }
+
+  .frontrow-container > p {
+    margin: 0;
   }
 
   .fr-num-value {
@@ -33,53 +44,18 @@
     box-shadow: 0px 1px 3px 0px rgba(211, 227, 217, 0.40);
   }
 
-  .fr-text {
-    flex: 1 0 0;
-
-    color: #212121;
-    font-weight: 400;
-    line-height: 24px;
-  }
-
-  .fr-text:before {
-    content: "recently shared this with their patients, and were not paid to do so! "
-  }
-
   .fr-bold {
-    color: #212121;
     font-weight: 700;
-    line-height: 24px;
   }
 
   .fr-link {
     color: #212121;
     font-weight: 400;
-    line-height: 24px;
-    text-decoration-line: underline;
   }
 
   @media only screen and (max-width: 768px) {
-    .frontrow-container {
-      /* may need to adjust this to make content fit on full lines on mobile */
-      font-size: 16px;
-    }
-
-    .fr-text {
-      line-height: normal;
-    }
-
-    .fr-text:before {
-      content: "recently shared this with their patients, and were not paid to do so! "
-    }
-
-    .fr-bold {
-      line-height: normal;
-    }
-
     .fr-link {
-      align-self: stretch;
       display: block;
-      padding-top: 4px;
     }
   }
 </style>
