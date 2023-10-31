@@ -1,93 +1,94 @@
 <!-- Add a section from the visual editor in shopify - Custom Liquid -->
 <!-- Copy and paste the code in this file into the field for custom liquid -->
+{%- if product.metafields.custom.frontrow_provider_count -%}
+  <div class="frontrow-qual-data" id="frontrow-qual-data">
+    <div class="fr-header">
+      <h1 class="fr-title">
+        What doctors told their patients about our product*
+      </h1>
+      <p>
+        These are notes that a few of the <span class="fr-pr-bold">{{ product.metafields.custom.frontrow_provider_count }}</span>
+        providers who shared our product wrote to their patients. This data
+        was collected by a 3rd party partner, Frontrow Health.
+        <span class="fr-note">These notes do not constitute general medical
+          advice.</span>
+      </p>
+    </div>
 
-<div class="frontrow-qual-data" id="frontrow-qual-data">
-  <div class="fr-header">
-    <h1 class="fr-title">
-      What doctors told their patients about our product*
-    </h1>
-    <p>
-      These are notes that a few of the <span class="fr-pr-bold">{{ product.metafields.custom.frontrow_provider_count }}</span>
-      providers who shared our product wrote to their patients. This data
-      was collected by a 3rd party partner, Frontrow Health.
-      <span class="fr-note">These notes do not constitute general medical
-        advice.</span>
-    </p>
-  </div>
-
-  <div class="fr-review-container">
-    <div class="fr-review-header">
-      <img class="fr-doctor-img"
-        alt="physician-from-tallahassee"
-        src="https://d27e8ryqi05ra2.cloudfront.net/lxt0ogfeczx9536g7rpgddlxd5di">
-      <div class="fr-review-header-text">
-        <div class="fr-review-header-title">
-          <p class="fr-doctor-title">Physician from Tallahassee, FL</p>
+    <div class="fr-review-container">
+      <div class="fr-review-header">
+        <img class="fr-doctor-img"
+          alt="physician-from-tallahassee"
+          src="https://d27e8ryqi05ra2.cloudfront.net/lxt0ogfeczx9536g7rpgddlxd5di">
+        <div class="fr-review-header-text">
+          <div class="fr-review-header-title">
+            <p class="fr-doctor-title">Physician from Tallahassee, FL</p>
+            <p class="fr-doctor-local">Tallahassee Memorial Hospital</p>
+            <div class="fr-tags">
+              <div class="fr-tag"><i class="fa fa-check-circle"></i> Verified
+                physician</div>
+              <div class="fr-tag">30+ years in practice</div>
+            </div>
+          </div>
           <p class="fr-doctor-local">Tallahassee Memorial Hospital</p>
-          <div class="fr-tags">
-            <div class="fr-tag"><i class="fa fa-check-circle"></i> Verified
-              physician</div>
-            <div class="fr-tag">30+ years in practice</div>
-          </div>
         </div>
-        <p class="fr-doctor-local">Tallahassee Memorial Hospital</p>
+      </div>
+
+      <div class="fr-review-title">
+        I’ve reviewed Touchpoint’s trial data, and it is very robust and compelling (rare for a company their size).
+      </div>
+
+      <div class="fr-review-text">
+        Almost all of you have mentioned heightened stress to me as something that’s making it harder to manage your conditions, adhere to treatment plans, stay motivated, focused, etc. So I tried to find a really great stress relief product to share with you, but something ideally that wasn’t a ‘pill’ that could have potentially bad side effects when ingested. I’ve reviewed Touchpoint’s trial data, and it is very robust and compelling (rare for a company their size). The headline is that many trial participants experienced more than 70% reduction in stress within 30 seconds, using gentle alternating vibrations. This isn’t going to ‘solve’ your problems, but instantly calming yourself down during stressful moments, so that you can make more clear-minded decisions can have tremendous implications on your health, which is why I’m really excited to share this with you.
+      </div>
+
+      <div class="review-footer">
+        <p><em>Not paid to share product</em></p>
+        <p>September 2023</p>
       </div>
     </div>
 
-    <div class="fr-review-title">
-      I’ve reviewed Touchpoint’s trial data, and it is very robust and compelling (rare for a company their size).
-    </div>
-
-    <div class="fr-review-text">
-      Almost all of you have mentioned heightened stress to me as something that’s making it harder to manage your conditions, adhere to treatment plans, stay motivated, focused, etc. So I tried to find a really great stress relief product to share with you, but something ideally that wasn’t a ‘pill’ that could have potentially bad side effects when ingested. I’ve reviewed Touchpoint’s trial data, and it is very robust and compelling (rare for a company their size). The headline is that many trial participants experienced more than 70% reduction in stress within 30 seconds, using gentle alternating vibrations. This isn’t going to ‘solve’ your problems, but instantly calming yourself down during stressful moments, so that you can make more clear-minded decisions can have tremendous implications on your health, which is why I’m really excited to share this with you.
-    </div>
-
-    <div class="review-footer">
-      <p><em>Not paid to share product</em></p>
-      <p>September 2023</p>
-    </div>
-  </div>
-
-  <div class="fr-review-container">
-    <div class="fr-review-header">
-      <img class="fr-doctor-img"
-        alt="physician-from-austin"
-        src="https://d27e8ryqi05ra2.cloudfront.net/3m260y6xqs81igh39201utv0wsl6">
-      <div class="fr-review-header-text">
-        <div class="fr-review-header-title">
-          <p class="fr-doctor-title">Physician from Austin, TX</p>
+    <div class="fr-review-container">
+      <div class="fr-review-header">
+        <img class="fr-doctor-img"
+          alt="physician-from-austin"
+          src="https://d27e8ryqi05ra2.cloudfront.net/3m260y6xqs81igh39201utv0wsl6">
+        <div class="fr-review-header-text">
+          <div class="fr-review-header-title">
+            <p class="fr-doctor-title">Physician from Austin, TX</p>
+            <p class="fr-doctor-local">Private clinic</p>
+            <div class="fr-tags">
+              <div class="fr-tag"><i class="fa fa-check-circle"></i> Verified
+                physician</div>
+              <div class="fr-tag">25+ years in practice</div>
+            </div>
+          </div>
           <p class="fr-doctor-local">Private clinic</p>
-          <div class="fr-tags">
-            <div class="fr-tag"><i class="fa fa-check-circle"></i> Verified
-              physician</div>
-            <div class="fr-tag">25+ years in practice</div>
-          </div>
         </div>
-        <p class="fr-doctor-local">Private clinic</p>
+      </div>
+
+      <div class="fr-review-title">
+        I found this device for you that’s been demonstrated to really effectively manage stress, in the moment, quickly
+      </div>
+
+      <div class="fr-review-text">
+        As your Psychiatrist, there’s obviously many prescription solutions to anxiety, but a lot of you have asked about non-prescription solutions, so I found this device for you that’s been demonstrated to really effectively manage stress, in the moment, quickly (it is not used to combat clinically diagnosed anxiety, but instead to reduce immediate stress). But the science of “bi-lateral alternating stimulation tactile” is a bit complicated, so let me try to break it down for you all. Essentially, when we encounter stress, our body's "fight or flight" response can become activated. This can lead to heightened anxiety and tension. TouchPoints employ gentle, alternating vibrations that have been shown to affect the way our brain responds to stress. These vibrations create a sensory experience that helps shift the brain away from the heightened stress response, which is why it can be a great way to manage stress in the moment, making you more clear-minded during difficult situations.
+      </div>
+
+      <div class="review-footer">
+        <p><em>Not paid to share product</em></p>
+        <p>September 2023</p>
       </div>
     </div>
 
-    <div class="fr-review-title">
-      I found this device for you that’s been demonstrated to really effectively manage stress, in the moment, quickly
-    </div>
+    <p class="fr-note">
+      *These notes do not constitute general medical advice.
+    </p>
 
-    <div class="fr-review-text">
-      As your Psychiatrist, there’s obviously many prescription solutions to anxiety, but a lot of you have asked about non-prescription solutions, so I found this device for you that’s been demonstrated to really effectively manage stress, in the moment, quickly (it is not used to combat clinically diagnosed anxiety, but instead to reduce immediate stress). But the science of “bi-lateral alternating stimulation tactile” is a bit complicated, so let me try to break it down for you all. Essentially, when we encounter stress, our body's "fight or flight" response can become activated. This can lead to heightened anxiety and tension. TouchPoints employ gentle, alternating vibrations that have been shown to affect the way our brain responds to stress. These vibrations create a sensory experience that helps shift the brain away from the heightened stress response, which is why it can be a great way to manage stress in the moment, making you more clear-minded during difficult situations.
-    </div>
-
-    <div class="review-footer">
-      <p><em>Not paid to share product</em></p>
-      <p>September 2023</p>
+    <div class="fr-learn-more">
+      <p>Learn more about <a class="fr-learn-more"
+          href="https://thefrontrowhealth.com/overview/" target="_blank">Frontrow
+          Health</a> and the full list of doctors they work with</p>
     </div>
   </div>
-
-  <p class="fr-note">
-    *These notes do not constitute general medical advice.
-  </p>
-
-  <div class="fr-learn-more">
-    <p>Learn more about <a class="fr-learn-more"
-        href="https://thefrontrowhealth.com/overview/" target="_blank">Frontrow
-        Health</a> and the full list of doctors they work with</p>
-  </div>
-</div>
+{% endif %}
