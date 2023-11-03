@@ -8,8 +8,7 @@ Add quant widget below the hero, inside the section with the header "We build yo
 Add the qual widget just above the site footer in its own section
 - `html/qual-widget.html`
 
-Add all code in the follow files to the `<head>` section of the site. This setting can be found by going to webflow icon in the top left and selecting "Site settings". Select "Custom code" from the left side navigation menu.
-- `html/quant-widget-css.html`
-- `html/qual-widget-css.html`
+If styles don't work directly in the html embed, follow these steps:
+- Add all styles code to the `<head>` section of the site. This setting can be found by going to webflow icon in the top left and selecting "Site settings". Select "Custom code" from the left side navigation menu.
 
 Test and preview the site.
