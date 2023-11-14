@@ -6,18 +6,21 @@
   gap: 8px;
 
   border-radius: 8px;
-  background: #F8FBF9;
+  background: #FEFEFF;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.03);
   background-blend-mode: multiply;
 
   flex-direction: column;
   max-width: 100%;
 
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .frontrow-container > p {
   margin: 0;
+  font-size: 18px;
+  line-height: 30px;
 }
 
 .fr-num-value {
@@ -28,47 +31,38 @@
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
-  font-weight: 700;
 
   border-radius: 4px;
   border: 1px solid #DAE8DF;
   background: var(--white, #FFF);
   box-shadow: 0 1px 3px 0 rgba(211, 227, 217, 0.40);
+
+  color: #212121;
+  font-family: 'Gibson Regular';
+  margin-right: 2px;
 }
 
 .fr-text {
-  flex: 1 0 0;
-
   color: #212121;
-  font-weight: 400;
-  line-height: 24px;
 }
 
 .fr-bold {
   color: #212121;
-  font-weight: 700;
-  line-height: 24px;
+  font-family: 'Gibson Regular';
 }
 
-.fr-link {
+a.fr-link {
   color: #212121;
-  font-weight: 400;
-  line-height: 24px;
   text-decoration-line: underline;
 }
 
 @media only screen and (max-width: 768px) {
+  .fr-link {
+    display: block;
+  }
+
   .frontrow-container {
-    margin-bottom: 20px;
-    margin-top: 0px;
-  }
-
-  .fr-text {
-    line-height: normal;
-  }
-
-  .fr-bold {
-    line-height: normal;
+    margin-bottom: 4rem;
   }
 }
 /* Quant data widget: END */
@@ -82,7 +76,6 @@
   gap: 24px;
 
   background: #F1F7F1;
-  margin-top: 70px;
 }
 
 .fr-header {
@@ -90,7 +83,9 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  align-self: stretch;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .fr-title {
@@ -103,7 +98,7 @@
 
 .fr-header > p {
   align-self: stretch;
-  color: #414B66;
+  color: #424242;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -111,123 +106,196 @@
   margin: 0;
 }
 
+.fr-header > p > .fr-note {
+  display: inline;
+}
+
+.fr-note {
+  display: none;
+}
+
 .quant-data-mobile {
   display: none;
 }
 
 .fr-pr-bold {
-  font-weight: 800;
+  font-family: 'Gibson Regular';
 }
 
 .fr-review-container {
   display: flex;
   flex-direction: column;
-  padding: 32px 32px 48px;
+  padding: 32px;
   align-items: flex-start;
-  gap: 32px;
+  gap: 24px;
   align-self: stretch;
   border-radius: 16px;
   border: 1px solid #F7F7F7;
   background: #FFF;
 }
 
-.fr-tag-row {
+
+.fr-review-header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
+  gap: 10px;
   width: 100%;
+}
+
+.fr-doctor-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.fr-doctor-title {
+  color: #0F1834;
+  font-size: 16px;
+  font-family: 'Gibson Regular';
+  margin: 0;
+}
+
+.fr-review-header-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fr-review-header-text > .fr-doctor-img {
+  display: none;
+}
+
+.fr-doctor-local {
+  color: var(--grey-800, #424242);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  margin-top: 4px;
+}
+
+.fr-review-header-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.fr-review-header-title > .fr-doctor-local {
+  display: none;
 }
 
 .fr-tags {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 10px;
+  align-items: center;
+  align-self: stretch;
 }
 
 .fr-tag {
   display: flex;
-  padding: 12px 16px;
+  padding: 6px 8px;
   align-items: center;
   gap: 8px;
 
   border-radius: 8px;
 
-  background: rgba(199, 219, 204, 0.30);
+  background: rgba(98, 110, 147, 0.10);
 
   color: #0F1834;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
   line-height: normal;
-}
-
-.doctor-details {
-  color: #414B66;
-  text-align: right;
-  font-size: 14px;
-}
-
-.doctor-details-mobile {
-  display: none;
 }
 
 .fr-review-title {
   flex: 1 0 0;
   color: #0F1834;
   font-size: 18px;
+  font-style: normal;
+  font-family: 'Gibson Regular';
   line-height: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 8px;
 }
 
 .fr-review-text {
   align-self: stretch;
   color: #0F1834;
   font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 24px;
-  margin-top: -8px;
+  margin-top: -4px;
+}
+
+.review-footer {
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid var(--grey-200, #EEE);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #424242;
+}
+
+.review-footer > p {
+  margin: 0;
 }
 
 .fr-learn-more {
-  color: #0F1834;
+  color: #212121;
   text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 22px;
-  margin-top: 8px;
 }
 
 a.fr-learn-more {
-  color: #0F1834;
-  font-weight: 800;
+  color: #212121;
+  font-size: 16px;
+  font-family: 'Gibson Regular';
   text-decoration-line: underline;
 
   display: inline-block;
 }
 
+.fr-learn-more > p {
+  margin-top: 0;
+}
+
 @media only screen and (max-width: 768px) {
-  .fr-header > p {
+  .fr-review-header-text > .fr-doctor-local {
     display: none;
   }
 
-  .quant-data-mobile {
+  .fr-tags {
+    margin-top: 12px;
+  }
+
+  .fr-review-header-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0px;
+  }
+
+  .fr-review-header-title > .fr-doctor-local {
     display: block;
-    text-align: left;
-    line-height: 18px;
-    font-size: 12px;
-  }
-
-  .quant-data-mobile > p:last-child {
-    margin-bottom: 0;
-  }
-
-  .doctor-details {
-    display: none;
-  }
-
-  .doctor-details-mobile {
-    display: block;
-    color: #414B66;
-    text-align: left;
-    font-size: 14px;
-    margin-top: -8px;
   }
 
   .fr-learn-more {
@@ -245,13 +313,7 @@ a.fr-learn-more {
   }
 
   .fr-review-container {
-    padding: 16px 16px 24px;
-  }
-
-  .fr-tag-row {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
+    padding: 24px 20px 32px;
   }
 
   .fr-tag {
@@ -261,6 +323,20 @@ a.fr-learn-more {
   .fr-review-title {
     font-size: 16px;
     line-height: 28px;
+  }
+
+  .fr-header > p > .fr-note {
+    display: none;
+  }
+
+  .fr-note {
+    display: inline;
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  .fr-header > p {
+    font-size: 13px;
   }
 }
 /* Qual data widget: END */
