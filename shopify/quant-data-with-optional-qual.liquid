@@ -1,0 +1,90 @@
+{% comment %}
+Renders quantitative frontrow widget
+
+Usage:
+{% render 'frontrow-widget' %}
+{% endcomment %}
+
+<frontrow-widget>
+  {%- if product.metafields.custom.frontrow_provider_count -%}
+    <div class="frontrow-container">
+      <p>
+        <span class="fr-num-value">{{ product.metafields.custom.frontrow_provider_count }}</span>
+        <span class="fr-bold">medical providers
+        </span>
+        <span class="fr-text">recently shared this with their patients, and were not paid to do so! </span>
+        {%- if product.metafields.custom.frontrow_product_id -%}
+          <a href="#frontrow-qual-data" class="fr-link">
+            Hear why they shared this product with patients
+          </a>
+        {% else %}
+          <a href="https://app.thefrontrowhealth.com?utm_source=255&utm_medium={{ product.metafields.custom.frontrow_product_id }}&utm_campaign=brands_website&utm_content=qual" class="fr-link" target="_blank">
+            Learn more from our partner
+          </a>
+        {% endif %}
+      </p>
+    </div>
+  {% endif %}
+</frontrow-widget>
+
+<style>
+/* quantitative data widget styles: START */
+.frontrow-container {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+
+  border-radius: 8px;
+  background: #F5F2ED;
+
+  flex-direction: column;
+  max-width: 100%;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  font-size: 16px;
+}
+
+.frontrow-container > p {
+  margin: 0;
+  color: rgb(14, 27, 77);
+}
+
+.fr-num-value {
+  display: inline-flex;
+  height: 22px;
+  padding: 4px 6px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+
+  border-radius: 4px;
+  border: 1px solid #DAE8DF;
+  background: var(--white, #FFF);
+  box-shadow: 0 1px 3px 0 rgba(211, 227, 217, 0.40);
+  font-family: 'Archivo';
+}
+
+.fr-bold {
+  font-weight: 700;
+  font-family: 'Archivo';
+}
+
+a.fr-link {
+  color: rgb(14, 27, 77);
+  font-weight: 400;
+  text-decoration-line: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .frontrow-container {
+    font-size: 14px;
+  }
+
+  a.fr-link {
+    display: block;
+  }
+}
+/* quantitative data widget styles: END */
+</style>
