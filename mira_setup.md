@@ -69,26 +69,17 @@
 
 Be sure to update the metafield value for provider count for these products too. The quantitative data widget will show up automatically and will link to Frontrow's overview page if there aren't provider testimonials for that products.
 
-### Change the quant widget code
-
 ### Qual data v2
-#### Add metafield value for frontrow product id
-1. Add another definition called, `frontrow-product-id` with type Integer
-1. Click "Save".
-1. Exit out of the settings modal.
-
-1. Navigate to the "Products" section in the left hand navigation.
-1. Scroll to the bottom of the page. Add the value in the new metafield input. Save the product.
-1. Repeat for all products.
+- Advanced Fertility Tracker - Mira Max Starter Kit has product id = 276
 
 #### Update code for qual widget
-In the visual editor, find the widget which should be of type: Custom Liquid.
-
-Delete everything in the input box and paste the contents of `/shopify/qualitative-data.liquid`
-
 In the Code editor: update the stylesheet. Find `frontrow.css` under Assets, replace the contents of that file with `/shopify/frontrow.css`
 
 *the quantitative widget only has style changes so that file can remain as is.
 
-### Update provider count
+In the visual editor, find the widget which should be of type: Custom Liquid.
+
+Delete everything in the input box and paste the contents of `/shopify/qualitative-data.liquid`
+
+#### Update provider count
 The provider count is now 357 so we can change the value of that metafield (was 345)
