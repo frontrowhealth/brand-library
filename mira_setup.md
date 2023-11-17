@@ -82,4 +82,4 @@ In the visual editor, find the widget which should be of type: Custom Liquid.
 Delete everything in the input box and paste the contents of `/shopify/qualitative-data.liquid`
 
 #### Update provider count
-The provider count is now 357 so we can change the value of that metafield (was 345)
+The provider count is now 353 so we can change the value of that metafield (was 345)
