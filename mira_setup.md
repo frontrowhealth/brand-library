@@ -83,3 +83,9 @@ Delete everything in the input box and paste the contents of `/shopify/qualitati
 
 #### Update provider count
 The provider count is now 353 so we can change the value of that metafield (was 345)
+
+
+### notes from setup on nov 17
+
+- we couldn't access the code so all styles are in the custom liquid section for the qualitative data (including the styles for the quantitative data)
+  - bascially the old frontrow.css file isn't being used but can be updated in the future if we need
