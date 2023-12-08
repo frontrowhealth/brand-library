@@ -97,6 +97,18 @@
   margin-bottom: -4px;
 }
 
+.fr-arrow {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 12px;
+  padding: 10px;
+
+  border-radius: 100px;
+  background-color: #E7FF03;
+}
+
 
 
 

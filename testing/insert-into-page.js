@@ -4,6 +4,7 @@
 var url = '';
 
 // Select the element where you want to insert the HTML
+// Snippet will be inserted ABOVE this element
 var element = document.getElementById('');
 
 // Use fetch API to get HTML content from the URL
@@ -18,10 +19,12 @@ fetch(url)
   })
   .then(htmlContent => {
     // Insert the fetched HTML into the element
-    element.innerHTML = htmlContent;
+    element.insertAdjacentHTML('beforebegin', htmlContent);
   })
   .catch(error => {
     console.error('There was a problem with the fetch operation: ', error);
   });
 
 // TODO: currently having cors policy issue w/ cloudfront version
+
+// TODO: make sure that element by id is on the right product page
