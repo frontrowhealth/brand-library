@@ -1,5 +1,7 @@
 # brand-library
 
+### *Frontrow branded widgets only exist for shopify as of Dec 7, 2023*
+
 This project provides sample code for the Frontrow widgets that can be included on brand partners' websites.
 
 Widgets:
