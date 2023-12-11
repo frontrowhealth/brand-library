@@ -117,3 +117,6 @@ In order to add the custom widget to a shopify store, follow these steps:
 
 Links must be in this format to track visits to the general store
 `https://app.thefrontrowhealth.com?utm_source={{ HEALTH_BRAND_ID }}&utm_medium={{ HEALTH_BRAND_PRODUCT_ID | 'quant' }}&utm_campaign=brands_website&utm_content={{ quant|qual }}`
+
+Links must be in this format to track visits to the 'Ask a question' page (MVP)
+`https://app.thefrontrowhealth.com?utm_campaign=ask_a_question&utm_medium={{ HEALTH_BRAND_PRODUCT_ID }}`
