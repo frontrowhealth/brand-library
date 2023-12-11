@@ -1,3 +1,6 @@
+// Sample reference to use for future API work
+// TODO: consider making this repo private
+
 // JavaScript snippet to fetch HTML content from a URL and insert it into an element
 
 // The URL from which to fetch HTML content
@@ -24,7 +27,3 @@ fetch(url)
   .catch(error => {
     console.error('There was a problem with the fetch operation: ', error);
   });
-
-// TODO: currently having cors policy issue w/ cloudfront version
-
-// TODO: make sure that element by id is on the right product page
