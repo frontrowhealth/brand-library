@@ -113,3 +113,7 @@ In order to add the custom widget to a shopify store, follow these steps:
 1. The link at the bottom of the qualitative widget also links to Frontrow's general page in a new tab.
     - *If you created a copy of your theme, you can now publish it from the shopify dashboard.*
 
+## Link tracking
+
+Links must be in this format to track visits to the general store
+`https://app.thefrontrowhealth.com?utm_source={{ HEALTH_BRAND_ID }}&utm_medium={{ HEALTH_BRAND_PRODUCT_ID | 'quant' }}&utm_campaign=brands_website&utm_content={{ quant|qual }}`
