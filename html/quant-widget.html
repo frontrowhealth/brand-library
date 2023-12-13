@@ -82,7 +82,6 @@
   .fr-quant-col.bold {
     display: inline;
 
-    color: #424242;
     font-weight: 600;
     font-family: "sofia-pro", sans-serif;
   }
@@ -90,12 +89,14 @@
   .fr-quant-col.regular {
     display: inline;
 
-    color: #424242;
     font-weight: 300;
     font-family: "sofia-pro", sans-serif;
   }
 
   .hear-why {
+    display: flex;
+    align-items: center;
+
     color: #212121;
     font-size: 16px;
     font-weight: 600;
@@ -106,8 +107,14 @@
     text-align: left;
   }
 
-  .fr-link>img {
-    height: 20px;
+  .fr-logo-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .fr-logo-button>img {
+    height: 18px;
     vertical-align: baseline;
   }
 
@@ -116,8 +123,8 @@
     justify-content: center;
     align-items: center;
 
-    margin-left: 12px;
-    padding: 10px;
+    margin-left: 6px;
+    padding: 6px;
 
     border-radius: 100px;
     background-color: #E7FF03;
@@ -138,16 +145,16 @@
     <p>
       <span class="fr-quant-col bold"> 333 medical providers </span>
       <span class="fr-quant-col regular">
-        recently shared this product with their patients on
-        <a href="#" class="fr-link" id="frontrow-learn-more-modal">
+        recently shared this with their patients on
+        <button class="fr-logo-button" id="frontrow-learn-more-modal">
           <img src="https://d27e8ryqi05ra2.cloudfront.net/frontrow-logo.svg" />
-        </a>
+        </button>
       </span>
     </p>
 
     <a href="#frontrow-qual-data" class="hear-why">
       Hear why they did
-      <span class="fr-arrow" style="margin-left:8px;">
+      <span class="fr-arrow">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 15 15" fill="none"><path d="M11.0838 8.59664L0.433349 8.59664L0.433349 6.84664L11.0838 6.84664L6.39035 2.15314L7.6276 0.915893L14.4333 7.72164L7.6276 14.5274L6.39035 13.2901L11.0838 8.59664Z" fill="#212121" stroke="#212121" stroke-width="0.35" /></svg>
       </span>
     </a>
