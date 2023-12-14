@@ -1,32 +1,49 @@
 <link rel="stylesheet" href="https://use.typekit.net/ncy3pbi.css">
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var modal = document.getElementById("frontrow-modal");
+  document.addEventListener('DOMContentLoaded', function() {
+    var button = document.getElementById('frontrow-learn-more-modal');
+    var modal = document.getElementById('frontrow-modal');
+    var closeButton = modal.querySelector('.fr-close');
 
-    var openModalButton = document.getElementById("frontrow-learn-more-modal");
+    // Function to open the modal
+    function openModal() {
+        modal.style.display = 'block';
+    }
 
-    var closeButton = document.getElementsByClassName("fr-close")[0];
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = 'none';
+    }
 
-    openModalButton.onclick = function () {
-      modal.style.display = "block";
-    };
+    // Event listener for the button to open the modal
+    if (button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            openModal();
+        });
+    }
 
-    closeButton.onclick = function () {
-      modal.style.display = "none";
-    };
+    // Event listener for the close button inside the modal
+    if (closeButton) {
+        closeButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            closeModal();
+        });
+    }
 
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
+    // Event listener to close the modal if clicked outside
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
   });
 </script>
 
 <style>
   .fr-modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 999;
     left: 0;
@@ -43,7 +60,7 @@
   .fr-modal-logo {
     height: 20px;
     vertical-align: baseline;
-    margin: 0px 2px 0px 4px;
+    margin-bottom: -1px;
   }
 
   .fr-modal-content {
@@ -124,7 +141,7 @@
     padding: 8px;
   }
 
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 420px) {
     .fr-modal-link>.fr-icon.fr-arrow {
       display: none;
     }

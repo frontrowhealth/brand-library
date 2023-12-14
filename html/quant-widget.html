@@ -114,11 +114,13 @@
   }
 
   .fr-logo-button>img {
-    height: 18px;
+    height: 20px;
     vertical-align: baseline;
+    margin-bottom: -1px;
+    margin-left: 1px;
   }
 
-  .fr-arrow {
+  .hear-why>.fr-arrow {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -128,6 +130,37 @@
 
     border-radius: 100px;
     background-color: #E7FF03;
+  }
+
+  @media only screen and (max-width: 480px) {
+    .fr-quant-col>p {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .fr-logo-button>img {
+      height: 18px;
+    }
+
+    .hear-why {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .hear-why>.fr-arrow {
+      margin-left: 8px;
+    }
+
+    .hear-why>.fr-arrow>svg {
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  @media only screen and (max-width: 1050px) {
+    #product-word {
+      display: none;
+    }
   }
 </style>
 
@@ -145,8 +178,7 @@
     <p>
       <span class="fr-quant-col bold"> 333 medical providers </span>
       <span class="fr-quant-col regular">
-        recently shared this with their patients on
-        <button class="fr-logo-button" id="frontrow-learn-more-modal">
+        recently shared this <span id="product-word"> product </span> with their patients on <button class="fr-logo-button" id="frontrow-learn-more-modal">
           <img src="https://d27e8ryqi05ra2.cloudfront.net/frontrow-logo.svg" />
         </button>
       </span>

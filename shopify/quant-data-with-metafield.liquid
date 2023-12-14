@@ -96,6 +96,9 @@
       }
 
       .hear-why {
+        display: flex;
+        align-items: center;
+
         color: #212121;
         font-size: 16px;
         font-weight: 600;
@@ -113,11 +116,13 @@
       }
 
       .fr-logo-button>img {
-        height: 18px;
+        height: 20px;
         vertical-align: baseline;
+        margin-bottom: -1px;
+        margin-left: 1px;
       }
 
-      .fr-arrow {
+      .hear-why>.fr-arrow {
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -127,6 +132,37 @@
 
         border-radius: 100px;
         background-color: #E7FF03;
+      }
+
+      @media only screen and (max-width: 480px) {
+        .fr-quant-col>p {
+          font-size: 14px;
+          line-height: 24px;
+        }
+
+        .fr-logo-button>img {
+          height: 18px;
+        }
+
+        .hear-why {
+          font-size: 14px;
+          margin-top: 8px;
+        }
+
+        .hear-why>.fr-arrow {
+          margin-left: 8px;
+        }
+
+        .hear-why>.fr-arrow>svg {
+          height: 12px;
+          width: 12px;
+        }
+      }
+
+      @media only screen and (max-width: 1050px) {
+        #product-word {
+          display: none;
+        }
       }
     </style>
 
@@ -144,8 +180,7 @@
         <p>
           <span class="fr-quant-col bold"> {{ product.metafields.custom.frontrow_provider_count }} medical providers </span>
           <span class="fr-quant-col regular">
-            recently shared this with their patients on
-            <button class="fr-logo-button" id="frontrow-learn-more-modal">
+            recently shared this <span id="product-word"> product </span> with their patients on <button class="fr-logo-button" id="frontrow-learn-more-modal">
               <img src="https://d27e8ryqi05ra2.cloudfront.net/frontrow-logo.svg" />
             </button>
           </span>
@@ -153,7 +188,7 @@
 
         <a href="#frontrow-qual-data" class="hear-why">
           Hear why they did
-          <span class="fr-arrow" style="margin-left:8px;">
+          <span class="fr-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 15 15" fill="none"><path d="M11.0838 8.59664L0.433349 8.59664L0.433349 6.84664L11.0838 6.84664L6.39035 2.15314L7.6276 0.915893L14.4333 7.72164L7.6276 14.5274L6.39035 13.2901L11.0838 8.59664Z" fill="#212121" stroke="#212121" stroke-width="0.35" /></svg>
           </span>
         </a>
