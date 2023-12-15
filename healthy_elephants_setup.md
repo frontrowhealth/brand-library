@@ -17,3 +17,9 @@
   - Testimonials
     - Link to general store
     - Link to ask a question
+
+
+Monday
+1. Update quant
+2. Update modal
+3. Update qual
