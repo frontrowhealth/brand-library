@@ -8,35 +8,35 @@
 
     // Function to open the modal
     function openModal() {
-        modal.style.display = 'block';
+      modal.style.display = 'block';
     }
 
     // Function to close the modal
     function closeModal() {
-        modal.style.display = 'none';
+      modal.style.display = 'none';
     }
 
     // Event listener for the button to open the modal
     if (button) {
-        button.addEventListener('click', function(event) {
-            event.preventDefault();
-            openModal();
-        });
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal();
+      });
     }
 
     // Event listener for the close button inside the modal
     if (closeButton) {
-        closeButton.addEventListener('click', function(event) {
-            event.preventDefault();
-            closeModal();
-        });
+      closeButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        closeModal();
+      });
     }
 
     // Event listener to close the modal if clicked outside
     window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
+      if (event.target === modal) {
+        closeModal();
+      }
     });
   });
 </script>
@@ -45,7 +45,7 @@
   .fr-modal {
     display: none;
     position: fixed;
-    z-index: 999;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
@@ -174,8 +174,7 @@
     <p>Frontrow tracks data on which products providers include on their
       page, and then shares this data back with health brands like us.</p>
 
-    <!-- TODO: add link params -->
-    <a class="fr-modal-link" href="https://app.thefrontrowhealth.com" target="_blank">See full list of providers Frontrow partners
+    <a class="fr-modal-link" href="https://app.thefrontrowhealth.com?utm_source=200&utm_medium=383&utm_campaign=brands_website&utm_content=modal" target="_blank">See full list of providers Frontrow partners
       with and read more about how it works.
       <span class="fr-icon fr-arrow">
         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
