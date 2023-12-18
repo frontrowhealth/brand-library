@@ -1,0 +1,377 @@
+<link rel="stylesheet" href="https://use.typekit.net/ncy3pbi.css">
+
+<style>
+  .fr-quant-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 16px;
+    gap: 14px;
+
+    border-radius: 8px;
+    box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.08);
+
+    font-family: "sofia-pro", sans-serif;
+    color: #212121;
+
+    background-color: rgb(256, 256, 256, .50);
+
+    margin-bottom: 16px;
+
+    transition-delay: .75s;
+  }
+
+  .fr-provider-sample {
+    flex-shrink: 0;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .fr-img-sample {
+    width: 36px;
+    height: 36px;
+
+    object-fit: cover;
+
+    border: 2px #F8FBF9 solid;
+    border-radius: 100px;
+    box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  .fr-sample {
+    width: 36px;
+    height: 36px;
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: -14px;
+
+    background: rgba(197, 197, 253, 0.93);
+    border: 2px #F8FBF9 solid;
+    border-radius: 100px;
+    backdrop-filter: blur(4px);
+
+    font-family: "sofia-pro", sans-serif;
+  }
+
+  .fr-sample>p {
+    padding-right: 1px;
+    padding-bottom: 1px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 10px;
+    margin:0;
+    font-family: "sofia-pro", sans-serif !important;
+  }
+
+  .fr-quant-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fr-quant-col>p {
+    margin: 0;
+    font-family: "sofia-pro", sans-serif !important;
+    text-align: left;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .fr-quant-col.bold {
+    display: inline;
+
+    font-weight: 600;
+    font-family: "sofia-pro", sans-serif;
+  }
+
+  .fr-quant-col.regular {
+    display: inline;
+
+    font-weight: 300;
+    font-family: "sofia-pro", sans-serif;
+  }
+
+  .hear-why {
+    display: flex;
+    align-items: center;
+
+    color: #212121;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    margin-top: 6px;
+    font-family: "sofia-pro", sans-serif;
+    text-align: left;
+  }
+
+  .fr-logo-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .fr-logo-button>img {
+    height: 20px;
+    vertical-align: baseline;
+    margin-bottom: -1px;
+    margin-left: 1px;
+  }
+
+  .hear-why>.fr-arrow {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 6px;
+    padding: 6px;
+
+    border-radius: 100px;
+    background-color: #E7FF03;
+  }
+
+  @media only screen and (max-width: 480px) {
+    .fr-quant-col>p {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .fr-logo-button>img {
+      height: 18px;
+    }
+
+    .hear-why {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .hear-why>.fr-arrow {
+      margin-left: 8px;
+    }
+
+    .hear-why>.fr-arrow>svg {
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  @media only screen and (max-width: 1050px) {
+    #product-word {
+      display: none;
+    }
+  }
+</style>
+
+<div class="fr-quant-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="450">
+  <div class="fr-provider-sample">
+    <img class="fr-img-sample"
+      src="https://d27e8ryqi05ra2.cloudfront.net/provider1.png" />
+    <img class="fr-img-sample"
+      src="https://d27e8ryqi05ra2.cloudfront.net/provider2.png"
+      style="margin-left:-14px;" />
+    <div class="fr-sample"><p>+153</p></div>
+  </div>
+
+  <div class="fr-quant-col">
+    <p>
+      <span class="fr-quant-col bold"> 155 medical providers </span>
+      <span class="fr-quant-col regular">
+        recently shared this <span id="product-word"> product </span> with their patients on <button class="fr-logo-button" id="frontrow-learn-more-modal">
+          <img src="https://d27e8ryqi05ra2.cloudfront.net/frontrow-logo.svg" />
+        </button>
+      </span>
+    </p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var button = document.getElementById('frontrow-learn-more-modal');
+    var modal = document.getElementById('frontrow-modal');
+    var closeButton = modal.querySelector('.fr-close');
+
+    // Function to open the modal
+    function openModal() {
+      modal.style.display = 'block';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    // Event listener for the button to open the modal
+    if (button) {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        openModal();
+      });
+    }
+
+    // Event listener for the close button inside the modal
+    if (closeButton) {
+      closeButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        closeModal();
+      });
+    }
+
+    // Event listener to close the modal if clicked outside
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  });
+</script>
+
+<style>
+  .fr-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+
+    font-family: "sofia-pro", sans-serif;
+    color: #212121;
+  }
+
+  .fr-modal-logo {
+    height: 20px;
+    vertical-align: baseline;
+    margin-bottom: -1px;
+  }
+
+  .fr-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 24px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 0.5rem;
+    font-size: 16px;
+    color: #212121;
+  }
+
+  .fr-modal-header-row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .fr-modal-title {
+    color: #212121;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 2rem;
+  }
+
+  .fr-modal-content > p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-family: "sofia-pro", sans-serif !important;
+  }
+
+  .fr-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 8px;
+    padding: 6px;
+
+    border-radius: 100px;
+  }
+
+  .fr-icon.fr-close {
+    float: right;
+    background-color: #EBEBF5;
+  }
+
+  .fr-close:hover,
+  .fr-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .fr-modal-note {
+    font-style: italic;
+  }
+
+  .fr-modal-link {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #212121;
+    line-height: 28px;
+
+    font-size: 16px;
+    font-family: "sofia-pro", sans-serif !important;
+  }
+
+  .fr-modal-link>.fr-icon.fr-arrow {
+    background-color: #E7FF03;
+    margin-left: 8px;
+    padding: 8px;
+  }
+
+  @media only screen and (max-width: 420px) {
+    .fr-modal-link>.fr-icon.fr-arrow {
+      display: none;
+    }
+  }
+</style>
+
+<div id="frontrow-modal" class="fr-modal">
+  <div class="fr-modal-content">
+    <div class="fr-modal-header-row">
+      <span class="fr-modal-title">What's really "doctor-recommended"?</span>
+      <span class="fr-icon fr-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+          viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M1 1L9 9"
+            stroke="#212121" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" /></svg>
+      </span>
+    </div>
+
+    <p>We've partnered with <img
+        src="https://d27e8ryqi05ra2.cloudfront.net/frontrow-logo.svg"
+        class="fr-modal-logo" /> who works with hundreds of medical
+      providers and tracks which non-prescription products they share with
+      real patients.</p>
+
+    <p>How it works: Frontrow Health enables providers to share their
+      favorite health products through their own 'discounts pages'.
+      Providers share these pages with patients without getting paid, and
+      Frontrow pays patients cash back when they buy.</p>
+
+    <p>Frontrow tracks data on which products providers include on their
+      page, and then shares this data back with health brands like us.</p>
+
+    <a class="fr-modal-link" href="https://app.thefrontrowhealth.com?utm_source=200&utm_medium=383&utm_campaign=brands_website&utm_content=modal" target="_blank">See full list of providers Frontrow partners
+      with and read more about how it works.
+      <span class="fr-icon fr-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+          viewBox="0 0 11 10" fill="none"><path
+            d="M8.6075 5.62492L1.625 5.62492C1.27982 5.62492 1 5.3451 1 4.99992C1 4.65474 1.27982 4.37492 1.625 4.37492L8.6075 4.37492L5.69688 1.4643C5.45283 1.22026 5.45283 0.824587 5.69688 0.580547C5.94092 0.336506 6.33658 0.336506 6.58063 0.580547L10.4281 4.42801C10.7439 4.74387 10.7439 5.25598 10.4281 5.57183L6.58062 9.4193C6.33658 9.66334 5.94092 9.66334 5.69687 9.4193C5.45283 9.17526 5.45283 8.77959 5.69687 8.53555L8.6075 5.62492Z"
+            fill="#212121" stroke="#212121" stroke-width="0.35" /></svg>
+      </span>
+    </a>
+  </div>
+</div>
