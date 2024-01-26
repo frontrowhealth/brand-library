@@ -1,0 +1,457 @@
+<link rel="stylesheet" href="https://use.typekit.net/ncy3pbi.css">
+
+<style>
+  .fr-qual-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 56px 80px;
+    gap: 24px;
+
+    background: #FAFAFA;
+
+    font-family: "sofia-pro", sans-serif;
+    color: #212121;
+  }
+
+  .fr-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 16px;
+    margin-bottom: 8px;
+
+    text-align: center;
+  }
+
+  .fr-title {
+    margin-bottom: 0;
+
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    color: #0F1834;
+    text-align: center;
+    font-family: "sofia-pro", sans-serif !important;
+    text-transform: none;
+  }
+
+  .fr-header>p {
+    max-width: 80%;
+
+    margin: 0;
+
+    color: #322422;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: "sofia-pro", sans-serif !important;
+  }
+
+  .fr-header.bold {
+    display: inline;
+
+    font-family: "sofia-pro", sans-serif !important;
+    font-weight: 700;
+  }
+
+  .fr-reviews {
+    background: #FFF;
+    border-radius: 16px;
+    box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  .fr-review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 32px;
+
+    border-bottom: 1px solid var(--grey-200, #EEE);
+  }
+
+  .fr-review-header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .fr-review-header>.available {
+    background-color: green;
+    border-radius: 100px;
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    border: 2px solid #FAFAFA;
+    margin-top: 32px;
+    margin-left: 32px;
+  }
+
+  .fr-review-header>.unavailable {
+    border-radius: 100px;
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    border: 2px solid #424242;
+    margin-top: 34px;
+    margin-left: 34px;
+    background-color: #FAFAFA;
+    outline: 2px solid #FAFAFA;
+  }
+
+  .ask-the-doctor {
+    height: 40px;
+
+    flex-shrink: 0;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0px 24px;
+
+    border-radius: 100px;
+    background: #EAFE53;
+
+    color: #212121;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    font-family: "sofia-pro", sans-serif;
+  }
+
+  .ask-the-doctor.disabled {
+    background-color: #EBEBF5;
+    color: #9E9E9E;
+    margin: 0;
+    margin-left: auto;
+  }
+
+  .fr-review-container>.ask-the-doctor {
+    display: none;
+  }
+
+  .fr-doctor-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    flex-shrink: 0;
+    object-fit: cover;
+    box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  .fr-doctor-title {
+    margin: 0;
+
+    color: #0F1834;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: "sofia-pro", sans-serif !important;
+  }
+
+  .fr-review-header-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fr-review-header-text>.fr-doctor-img {
+    display: none;
+  }
+
+  .fr-doctor-local {
+    margin: 0;
+    margin-top: 4px;
+
+    color: #424242;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-family: "sofia-pro", sans-serif !important;
+  }
+
+  .fr-review-header-title {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: "sofia-pro", sans-serif;
+  }
+
+  .fr-review-header-title>.fr-doctor-local {
+    display: none;
+  }
+
+  .fr-tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 10px;
+  }
+
+  .fr-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 8px;
+    padding-bottom: 8px;
+    gap: 6px;
+
+    border-radius: 8px;
+    background: #EBEBF5;
+
+    color: #0F1834;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 12px;
+    font-family: "sofia-pro", sans-serif;
+  }
+
+  .fr-review-title {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    color: #0F1834;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    font-family: "sofia-pro", sans-serif;
+  }
+
+  .fr-review-text {
+    color: #0F1834;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
+    font-family: "sofia-pro", sans-serif;
+
+    margin-bottom: 24px;
+  }
+
+  .fr-learn-more {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 16px 20px;
+    padding-bottom: 20px;
+  }
+
+  .fr-arrow {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 12px;
+    padding: 10px;
+
+    border-radius: 100px;
+    background-color: #E7FF03;
+    font-family: "sofia-pro", sans-serif;
+  }
+
+  .fr-learn-more>a {
+    margin: 0;
+    text-decoration: none;
+    color: #212121;
+    font-family: "sofia-pro", sans-serif !important;
+    align-items: baseline;
+    display: flex;
+    font-size: 16px;
+  }
+
+  .fr-learn-more>a>img {
+    height: 20px;
+    display: inline-flex;
+    margin-left: 6px;
+    margin-right: 5px;
+    vertical-align: baseline;
+  }
+
+  @media only screen and (max-width: 820px) {
+    .fr-review-header {
+      align-items: flex-start;
+    }
+
+    .fr-review-header-text>.fr-doctor-local {
+      display: none;
+    }
+
+
+    .fr-review-container>.ask-the-doctor {
+      display: flex;
+      width: 100%;
+      padding: 0;
+    }
+
+    .ask-the-doctor {
+      display: none;
+    }
+
+    .fr-tags {
+      margin-top: 12px;
+    }
+
+    .fr-review-header-title {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      gap: 0px;
+    }
+
+    .fr-review-header-title>.fr-doctor-local {
+      display: block;
+    }
+
+    .fr-learn-more {
+      font-size: 14px;
+      line-height: 22px;
+      align-items: center;
+    }
+
+    .fr-qual-container {
+      padding: 40px 20px;
+    }
+
+    .fr-review-container {
+      padding: 24px 20px 32px;
+    }
+
+    .fr-tag {
+      font-size: 11px;
+    }
+
+    .fr-header>p {
+      font-size: 13px;
+      max-width: 100%;
+    }
+
+    .fr-learn-more>a {
+      text-align: center;
+      display: block;
+    }
+
+    .fr-learn-more>a>img {
+      margin-left: 4px;
+      margin-right: 3px;
+    }
+  }
+</style>
+
+<div class="fr-qual-container" id="frontrow-qual-data">
+  <div class="fr-header">
+    <h1 class="fr-title">
+      What providers told their patients about our product
+    </h1>
+    <p>
+      Here are notes that some of the
+      <span class="fr-header bold">279 medical providers</span>
+      wrote to their own patients about our product. Providers do not get
+      paid to share our product, and these notes do not constitute general
+      medical advice.
+    </p>
+  </div>
+
+  <div class="fr-reviews">
+    <div class="fr-review-container">
+      <div class="fr-review-header">
+        <img class="fr-doctor-img"
+          alt="physician-from-tallahassee"
+          src="https://d27e8ryqi05ra2.cloudfront.net/lxt0ogfeczx9536g7rpgddlxd5di">
+        <div class="fr-review-header-text">
+          <div class="fr-review-header-title">
+            <p class="fr-doctor-title">Physician from Tallahassee, FL</p>
+            <p class="fr-doctor-local">Tallahassee Memorial Hospital</p>
+            <div class="fr-tags">
+              <div class="fr-tag">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="13" viewBox="0 0 10 13" fill="none"><path d="M3.81818 9.44895L1.63636 7.26713L2.40545 6.49804L3.81818 7.90532L7.41273 4.31077L8.18182 5.08532M4.90909 0.72168L0 2.9035V6.17623C0 9.2035 2.09455 12.0344 4.90909 12.7217C7.72364 12.0344 9.81818 9.2035 9.81818 6.17623V2.9035L4.90909 0.72168Z" fill="#212121" /></svg>
+                Verified provider
+              </div>
+              <div class="fr-tag">35+ years in practice</div>
+            </div>
+          </div>
+          <p class="fr-doctor-local">Tallahassee Memorial Hospital</p>
+        </div>
+      </div>
+
+      <div class="fr-review-title">
+        By tracking the vaginal microbiome, you all can detect imbalances or microbial variations in their early stages with this product...
+      </div>
+
+      <div class="fr-review-text">
+        By tracking the vaginal microbiome, you all can detect imbalances or microbial variations in their early stages with this product, which basically means you may be able to have more timely intervention or even prevention of conditions such as bacterial vaginosis, yeast infections, and recurrent UTIs. What’s great about this specific product, though, is that in addition to the diagnostic aspect of this, there’s also a treatment program. An approved study highlights the effectiveness of their treatment programs. Pretty remarkably, 83% of participants who went through Evvy's treatment programs experienced a transition from dysbiosis (basically a microbial imbalance) to a protective microbiome (healthier microbiome essentially!).
+      </div>
+    </div>
+
+    <div class="fr-review-container">
+      <div class="fr-review-header">
+        <img class="fr-doctor-img"
+          alt="physician-from-austin"
+          src="https://d27e8ryqi05ra2.cloudfront.net/3m260y6xqs81igh39201utv0wsl6">
+        <div class="fr-review-header-text">
+          <div class="fr-review-header-title">
+            <p class="fr-doctor-title">Physician from Austin, TX</p>
+            <p class="fr-doctor-local">Private clinic</p>
+            <div class="fr-tags">
+              <div class="fr-tag">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="13" viewBox="0 0 10 13" fill="none"><path d="M3.81818 9.44895L1.63636 7.26713L2.40545 6.49804L3.81818 7.90532L7.41273 4.31077L8.18182 5.08532M4.90909 0.72168L0 2.9035V6.17623C0 9.2035 2.09455 12.0344 4.90909 12.7217C7.72364 12.0344 9.81818 9.2035 9.81818 6.17623V2.9035L4.90909 0.72168Z" fill="#212121" /></svg>
+                Verified provider
+              </div>
+              <div class="fr-tag">30+ years in practice</div>
+            </div>
+          </div>
+          <p class="fr-doctor-local">Private clinic</p>
+        </div>
+      </div>
+
+      <div class="fr-review-title">
+        This Evvy test has undergone rigorous validation processes and has demonstrated superior analytical sensitivity and specificity
+      </div>
+
+      <div class="fr-review-text">
+        There’s tons of growing research on the importance of surveying the microbiome, but not every product/test is accurate, well-developed, etc. This Evvy test has undergone rigorous validation processes and has demonstrated superior analytical sensitivity and specificity compared to traditional diagnostic methods like microscopy, wet mount, or Amsel's criteria. This basically means that it excels at identifying specific microorganisms within the vaginal microbiome. Sensitivity stands at 97%, while specificity ranges between 93.1% to 99.7% in identifying reported organisms. Such a level of accuracy is rare and great to see with this product.
+      </div>
+    </div>
+
+    <div class="fr-learn-more">
+      <a href="https://app.thefrontrowhealth.com?utm_source={{BRAND_ID}}&utm_medium={{PRODUCT_ID}}&utm_campaign=brands_website&utm_content=qual" target="_blank">
+        Learn more about
+        <img src="https://d27e8ryqi05ra2.cloudfront.net/frontrow-logo.svg" />
+        and see their full list of medical provider partners
+        <span class="fr-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 15 15" fill="none"><path d="M11.0838 8.59664L0.433349 8.59664L0.433349 6.84664L11.0838 6.84664L6.39035 2.15314L7.6276 0.915893L14.4333 7.72164L7.6276 14.5274L6.39035 13.2901L11.0838 8.59664Z" fill="#212121" stroke="#212121" stroke-width="0.35" /></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
